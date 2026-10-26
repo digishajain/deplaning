@@ -1,0 +1,329 @@
+<style>
+  .jb { display: grid; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
+  .jb-head { display: grid; gap: var(--cds-gap-xs); }
+  .jb-head h1 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); }
+  .jb-takeaway { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); max-width: 70ch; }
+  .jb-tiles { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
+  .jb-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
+  .jb-tile { display: grid; gap: var(--cds-gap-xs); align-content: start; }
+  .jb-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .jb-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; min-height: 1.2em; }
+  .jb-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); min-height: 1.2em; }
+  .jb-card h2 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+  .jb-note { margin: var(--cds-gap-xs) 0 var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .jb-row2 { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .jb-bars { display: grid; gap: var(--cds-gap-sm); min-height: 8rem; }
+  .jb-bar { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr 2rem; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); }
+  .jb-bar-track { height: 14px; }
+  .jb-bar-fill { height: 100%; border-radius: 4px; background: var(--cds-chart-muted); }
+  .jb-bar-fill.is-remote { background: var(--jb-accent); }
+  .jb-bar-n { text-align: right; font-variant-numeric: tabular-nums; }
+  .jb-legend { display: flex; gap: var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-top: var(--cds-gap-sm); }
+  .jb-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+  .jb-controls { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); align-items: center; margin-bottom: var(--cds-gap-md); }
+  .jb-controls input[type=search] { flex: 1 1 14rem; min-width: 0; padding: var(--cds-pad-xs) var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); font: inherit; }
+  .jb-chip { font: inherit; font-size: var(--cds-font-size-caption); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
+  .jb-chip[aria-pressed=true] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
+  .jb-chip:focus-visible, .jb-th:focus-visible { outline: 2px solid var(--jb-accent); outline-offset: 2px; }
+  .jb-tablebox { overflow: auto; max-height: 36rem; }
+  .jb-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .jb-table th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .jb-th { all: unset; cursor: pointer; }
+  .jb-table td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
+  .jb-table tr.is-new td:first-child { box-shadow: inset 3px 0 0 var(--jb-accent); }
+  .jb-fit { display: grid; grid-template-columns: 2rem 4rem; gap: 6px; align-items: center; }
+  .jb-fit-track { height: 6px; background: var(--color-border-line); border-radius: 3px; overflow: hidden; }
+  .jb-fit-fill { height: 100%; background: var(--jb-accent); border-radius: 3px; }
+  .jb-role a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .jb-org { color: var(--color-fg-muted); }
+  .jb-why { color: var(--color-fg-muted); margin-top: 2px; max-width: 46ch; }
+  .jb-pill { display: inline-block; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+  .jb-pill.ok { color: var(--color-ok); }
+  .jb-pill.warn { color: var(--color-warn); }
+  .jb-pill.bad { color: var(--color-bad); }
+  .jb-pill.mode { color: var(--color-fg-muted); }
+  .jb-empty { padding: var(--cds-pad-lg); text-align: center; color: var(--color-fg-muted); }
+  .jb-watch { display: grid; gap: var(--cds-gap-sm); min-height: 8rem; }
+  .jb-watch-item { display: grid; gap: 2px; font-size: var(--cds-font-size-caption); padding-bottom: var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); }
+  .jb-watch-item a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .jb-watch-item span { color: var(--color-fg-muted); }
+  .jb-fail { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: 6rem; }
+  .jb-fail::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
+  [data-dash-source-state=empty] { color: transparent; }
+  [data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+  @media (max-width: 640px) { .jb-hide-narrow { display: none; } }
+</style>
+
+<div class="jb">
+  <header class="jb-head" id="overview">
+    <h1>Impact AI Job Board</h1>
+    <p class="jb-takeaway dash-skeleton" data-source="summary" data-field="takeaway" data-row="0"></p>
+  </header>
+
+  <section class="jb-tiles" id="headline">
+    <div class="jb-card jb-tile">
+      <span class="jb-label">Remote roles worth applying to</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="remote_open" data-row="0"></span>
+      <span class="jb-sub">Remote, not closed, fit 70+</span>
+    </div>
+    <div class="jb-card jb-tile">
+      <span class="jb-label">New in latest refresh</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="new_latest" data-row="0"></span>
+      <span class="jb-sub">Found <span class="dash-skeleton" data-source="summary" data-field="latest_seen" data-row="0"></span></span>
+    </div>
+    <div class="jb-card jb-tile">
+      <span class="jb-label">Best match</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="top_fit" data-row="0"></span>
+      <span class="jb-sub dash-skeleton" data-source="summary" data-field="top_role" data-row="0"></span>
+    </div>
+    <div class="jb-card jb-tile">
+      <span class="jb-label">Leads tracked</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="total" data-row="0"></span>
+      <span class="jb-sub">Across <span class="dash-skeleton" data-source="summary" data-field="orgs" data-row="0"></span> organizations</span>
+    </div>
+  </section>
+
+  <section class="jb-card" id="roles">
+    <h2>Open roles, ranked by fit</h2>
+    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site.</p>
+    <div class="jb-controls">
+      <input type="search" id="jb-q" placeholder="Search org, title or note" aria-label="Search roles">
+      <button type="button" class="jb-chip" id="jb-remote" aria-pressed="true">Remote only</button>
+      <button type="button" class="jb-chip" id="jb-closed" aria-pressed="false">Show closed</button>
+      <span id="jb-sectors" style="display:contents"></span>
+    </div>
+    <div class="jb-tablebox">
+      <table class="jb-table dash-skeleton" id="jb-table" data-source="jobs" data-row-key="id">
+        <thead><tr>
+          <th data-field="fit"><button type="button" class="jb-th" data-sort="fit">Fit</button></th>
+          <th data-field="title"><button type="button" class="jb-th" data-sort="title">Role</button></th>
+          <th data-field="work_mode">Mode</th>
+          <th data-source="jobs_view" data-field="salary" class="jb-hide-narrow"><button type="button" class="jb-th" data-sort="salary_max">Salary</button></th>
+          <th data-field="sector" class="jb-hide-narrow">Sector</th>
+          <th data-field="status"><button type="button" class="jb-th" data-sort="status">Status</button></th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="jb-row2">
+    <div class="jb-card" id="by-sector">
+      <h2>Where the roles are</h2>
+      <p class="jb-note">Leads per sector that are not closed.</p>
+      <div class="jb-bars dash-skeleton" data-source="by_sector"></div>
+      <div class="jb-legend"><span><i style="background:var(--jb-accent)"></i>Remote</span><span><i style="background:var(--cds-chart-muted)"></i>Hybrid or on-site</span></div>
+    </div>
+    <div class="jb-card" id="watchlist">
+      <h2>Organizations to watch</h2>
+      <p class="jb-note">Funders and builders scaling AI-for-good work with no matching opening yet. Each refresh checks them for new roles.</p>
+      <div class="jb-watch dash-skeleton" data-source="watchlist"></div>
+    </div>
+  </section>
+</div>
+
+<script>
+  document.getElementById('dash-root').style.setProperty('--jb-accent', dash.colors[0]);
+
+  const money = (n) => '$' + Math.round(n / 1000) + 'K';
+
+  dash.calc('jobs_view', {
+    inputs: ['jobs'],
+    title: 'Salary range shown',
+    description: 'Each role’s posted salary range, formatted for the table.',
+    fn: (jobs) => jobs.map((j) => ({
+      id: j.id,
+      salary: j.salary_min == null ? 'Not posted'
+        : j.salary_min === j.salary_max ? '$' + Math.round(j.salary_min / 1000) + 'K'
+        : '$' + Math.round(j.salary_min / 1000) + 'K–' + Math.round(j.salary_max / 1000) + 'K',
+    })),
+  });
+
+  dash.calc('summary', {
+    inputs: ['jobs'],
+    title: 'Headline counts',
+    description: 'Remote strong matches, roles new in the latest refresh, the best match and totals.',
+    fn: (jobs) => {
+      const live = jobs.filter((j) => j.status !== 'Likely closed');
+      const remote = live.filter((j) => j.work_mode === 'Remote' && j.fit >= 70);
+      const latest = jobs.map((j) => j.first_seen).sort().at(-1) || '';
+      const fresh = jobs.filter((j) => j.first_seen === latest);
+      const top = [...live].sort((a, b) => b.fit - a.fit)[0];
+      const topRemote = [...remote].sort((a, b) => b.fit - a.fit)[0];
+      return [{
+        remote_open: remote.length,
+        new_latest: fresh.length,
+        latest_seen: latest,
+        top_fit: top ? top.fit : null,
+        top_role: top ? top.org + ' · ' + top.title : '',
+        total: jobs.length,
+        orgs: new Set(jobs.map((j) => j.org)).size,
+        takeaway: topRemote
+          ? remote.length + ' remote roles fit your AI product background. Start with ' + topRemote.org + '’s ' + topRemote.title + ' (fit ' + topRemote.fit + ').'
+          : 'No remote role scores 70+ right now. The watchlist shows where new ones are likely.',
+      }];
+    },
+  });
+
+  dash.calc('by_sector', {
+    inputs: ['jobs'],
+    title: 'Roles by sector',
+    description: 'Count of roles that are not closed, per sector, split into remote and not remote.',
+    fn: (jobs) => {
+      const live = jobs.filter((j) => j.status !== 'Likely closed');
+      const sectors = [...new Set(live.map((j) => j.sector))];
+      return sectors.map((sector) => {
+        const s = live.filter((j) => j.sector === sector);
+        return { sector, total: s.length, remote: s.filter((j) => j.work_mode === 'Remote').length };
+      }).sort((a, b) => b.total - a.total);
+    },
+  });
+
+  const state = { q: '', remoteOnly: true, showClosed: false, sector: null, sort: 'fit', dir: -1 };
+  const q = document.getElementById('jb-q');
+  const remoteBtn = document.getElementById('jb-remote');
+  const closedBtn = document.getElementById('jb-closed');
+  const sectorBox = document.getElementById('jb-sectors');
+  const table = document.getElementById('jb-table');
+  const tbody = table.querySelector('tbody');
+  const statusClass = { 'Likely open': 'ok', 'Verify': 'warn', 'Likely closed': 'bad' };
+
+  q.addEventListener('input', () => { state.q = q.value.trim().toLowerCase(); drawTable(); });
+  remoteBtn.addEventListener('click', () => { state.remoteOnly = !state.remoteOnly; drawTable(); });
+  closedBtn.addEventListener('click', () => { state.showClosed = !state.showClosed; drawTable(); });
+  table.querySelectorAll('.jb-th').forEach((b) => b.addEventListener('click', () => {
+    const key = b.dataset.sort;
+    state.dir = state.sort === key ? -state.dir : (key === 'title' || key === 'status' ? 1 : -1);
+    state.sort = key;
+    drawTable();
+  }));
+
+  function drawTable() {
+    const d = dash.data('jobs');
+    const v = dash.data('jobs_view');
+    remoteBtn.setAttribute('aria-pressed', state.remoteOnly);
+    closedBtn.setAttribute('aria-pressed', state.showClosed);
+    tbody.replaceChildren();
+    if (d.status === 'error') {
+      table.classList.remove('dash-skeleton');
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 6; td.className = 'jb-fail'; td.textContent = 'Failed to load';
+      return;
+    }
+    if (d.status !== 'ok') { table.classList.add('dash-skeleton'); return; }
+    table.classList.remove('dash-skeleton');
+    const rows = d.data;
+    const salary = new Map((v.status === 'ok' ? v.data : []).map((r) => [r.id, r.salary]));
+    const latest = rows.map((j) => j.first_seen).sort().at(-1);
+
+    const sectors = [...new Set(rows.map((j) => j.sector))].sort();
+    sectorBox.replaceChildren(...sectors.map((s) => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'jb-chip'; b.textContent = s;
+      b.setAttribute('aria-pressed', state.sector === s);
+      b.addEventListener('click', () => { state.sector = state.sector === s ? null : s; drawTable(); });
+      return b;
+    }));
+
+    const shown = rows.filter((j) =>
+      (!state.remoteOnly || j.work_mode === 'Remote') &&
+      (state.showClosed || j.status !== 'Likely closed') &&
+      (!state.sector || j.sector === state.sector) &&
+      (!state.q || [j.org, j.title, j.fit_note, j.sector].join(' ').toLowerCase().includes(state.q))
+    ).sort((a, b) => {
+      const x = a[state.sort] ?? -1, y = b[state.sort] ?? -1;
+      return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y))) * state.dir;
+    });
+
+    table.querySelectorAll('th').forEach((th) => {
+      const b = th.querySelector('.jb-th');
+      if (b) th.setAttribute('aria-sort', b.dataset.sort === state.sort ? (state.dir > 0 ? 'ascending' : 'descending') : 'none');
+    });
+
+    if (!shown.length) {
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 6; td.className = 'jb-empty';
+      td.textContent = 'No roles match these filters. Turn off Remote only or clear the search.';
+      return;
+    }
+    for (const j of shown) {
+      const tr = tbody.insertRow();
+      tr.dataset.key = j.id;
+      if (j.first_seen === latest) tr.classList.add('is-new');
+
+      const fit = tr.insertCell();
+      const fw = document.createElement('div'); fw.className = 'jb-fit';
+      const fn = document.createElement('span'); fn.textContent = j.fit;
+      const ft = document.createElement('div'); ft.className = 'jb-fit-track';
+      const ff = document.createElement('div'); ff.className = 'jb-fit-fill'; ff.style.width = j.fit + '%';
+      ft.append(ff); fw.append(fn, ft); fit.append(fw);
+
+      const role = tr.insertCell(); role.className = 'jb-role';
+      const a = document.createElement('a'); a.href = j.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = j.title;
+      const org = document.createElement('div'); org.className = 'jb-org';
+      org.textContent = j.org + (j.posted ? ' · posted ' + d3.utcFormat('%b %-d')(new Date(j.posted)) : '');
+      const why = document.createElement('div'); why.className = 'jb-why'; why.textContent = j.fit_note;
+      role.append(a, org, why);
+
+      const mode = tr.insertCell();
+      const mp = document.createElement('span'); mp.className = 'jb-pill mode'; mp.textContent = j.work_mode;
+      const loc = document.createElement('div'); loc.className = 'jb-why'; loc.textContent = j.location;
+      mode.append(mp, loc);
+
+      const sal = tr.insertCell(); sal.className = 'jb-hide-narrow'; sal.textContent = salary.get(j.id) ?? '';
+      const sec = tr.insertCell(); sec.className = 'jb-hide-narrow'; sec.textContent = j.sector;
+      const st = tr.insertCell();
+      const sp = document.createElement('span'); sp.className = 'jb-pill ' + (statusClass[j.status] || 'mode'); sp.textContent = j.status;
+      st.append(sp);
+    }
+  }
+
+  function drawSectors() {
+    const box = document.querySelector('.jb-bars');
+    const d = dash.data('by_sector');
+    box.replaceChildren();
+    if (d.status === 'error') { box.classList.remove('dash-skeleton'); box.innerHTML = '<div class="jb-fail">Failed to load</div>'; return; }
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); return; }
+    box.classList.remove('dash-skeleton');
+    const max = d3.max(d.data, (r) => r.total) || 1;
+    for (const r of d.data) {
+      const row = document.createElement('div'); row.className = 'jb-bar';
+      const name = document.createElement('span'); name.textContent = r.sector;
+      const track = document.createElement('div'); track.className = 'jb-bar-track';
+      track.style.display = 'flex'; track.style.gap = '2px';
+      const rem = document.createElement('div'); rem.className = 'jb-bar-fill is-remote'; rem.style.width = (r.remote / max * 100) + '%';
+      const oth = document.createElement('div'); oth.className = 'jb-bar-fill'; oth.style.width = ((r.total - r.remote) / max * 100) + '%';
+      if (r.remote) track.append(rem);
+      if (r.total - r.remote) track.append(oth);
+      const n = document.createElement('span'); n.className = 'jb-bar-n'; n.textContent = r.total;
+      row.append(name, track, n);
+      box.append(row);
+    }
+  }
+
+  function drawWatch() {
+    const box = document.querySelector('.jb-watch');
+    const d = dash.data('watchlist');
+    box.replaceChildren();
+    if (d.status === 'error') { box.classList.remove('dash-skeleton'); box.innerHTML = '<div class="jb-fail">Failed to load</div>'; return; }
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); return; }
+    box.classList.remove('dash-skeleton');
+    for (const w of d.data) {
+      const item = document.createElement('div'); item.className = 'jb-watch-item';
+      const a = document.createElement('a'); a.href = w.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = w.org;
+      const s = document.createElement('span'); s.textContent = w.sector + ' · ' + w.signal;
+      item.append(a, s); box.append(item);
+    }
+  }
+
+  dash.onData(() => {
+    document.querySelectorAll('[data-source="summary"]').forEach((el) => {
+      const d = dash.data('summary');
+      const row = d.status === 'ok' ? d.data[0] : null;
+      el.classList.toggle('dash-skeleton', !row && d.status !== 'error');
+      const val = row ? row[el.dataset.field] : null;
+      el.textContent = val == null || val === '' ? '—' : String(val);
+    });
+    drawTable();
+    drawSectors();
+    drawWatch();
+  });
+</script>
