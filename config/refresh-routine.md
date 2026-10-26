@@ -25,7 +25,11 @@ in education policy.
 
 ## Visa sponsorship (required)
 
-Digisha needs employers that sponsor work visas (H-1B). Record it on every row:
+Digisha has an approved I-140. A new employer needs to (1) file an H-1B
+transfer, which skips the lottery and keeps her priority date, and (2) restart
+the green card with a new PERM and I-140. Record both on every row.
+
+`visa` (H-1B):
 
 - `Sponsors`: the posting says the employer sponsors, or the employer has many
   recent H-1B LCA filings (roughly 10+ a year).
@@ -39,7 +43,15 @@ The posting's own wording beats filing data. To check filings, search for
 `"<employer>" H-1B LCA`, using sources such as ellis.com, myvisajobs.com and
 visaverge.com, which compile Department of Labor disclosure data. Write
 `visa_note` as one sentence with the evidence, and `visa_url` as the source,
-or null. Prefer roles at `Sponsors` and `Has sponsored` employers when
+or null.
+
+`gc` (green card): `Files green cards` when the employer has PERM filings on
+record or a posting says it sponsors green cards; `No filings found` when it
+files H-1Bs but shows no PERM filings; `Unknown`; `No` when the posting rules
+out sponsorship. Search `"<employer>" PERM green card` on the same sites.
+Write `gc_note` as one sentence with the evidence.
+
+Prefer roles at `Sponsors` and `Has sponsored` employers when
 searching. Remote roles open to candidates outside the US are worth noting,
 since they may not need a visa.
 
@@ -60,7 +72,8 @@ since they may not need a visa.
 {"id":"org-short-title","org":"","title":"","sector":"","work_mode":"Remote","location":"",
  "salary_min":null,"salary_max":null,"posted":"YYYY-MM-DD or null","first_seen":"YYYY-MM-DD",
  "status":"Likely open | Verify | Likely closed","fit":0,"fit_note":"","url":"",
- "visa":"Sponsors | Has sponsored | Unclear | Unknown | No","visa_note":"","visa_url":null}
+ "visa":"Sponsors | Has sponsored | Unclear | Unknown | No","visa_note":"","visa_url":null,
+ "gc":"Files green cards | No filings found | Unknown | No","gc_note":""}
 ```
 
 `status`: use `Likely open` when a dated posting is from the last 30 days.

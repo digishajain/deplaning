@@ -16,7 +16,9 @@
   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5407337008",
   "visa": "Sponsors",
   "visa_note": "Postings say Anthropic sponsors visas and retains immigration counsel, though not for every role; 156 H-1B LCAs in 2025.",
-  "visa_url": "https://www.ellis.com/visa-sponsors/anthropic-pbc"
+  "visa_url": "https://www.ellis.com/visa-sponsors/anthropic-pbc",
+  "gc": "No filings found",
+  "gc_note": "No green card (PERM) filings on public record, though it files many H-1Bs."
  },
  {
   "id": "playlab-spm-responsible-ai",
@@ -35,7 +37,9 @@
   "url": "https://execsearches.com/nonprofit-jobs/senior-product-manager-responsible-ai-playlab-remote",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found and postings don't mention sponsorship. Ask the recruiter.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "recidiviz-director-product",
@@ -54,7 +58,9 @@
   "url": "https://job-boards.greenhouse.io/recidiviz/jobs/4672944006",
   "visa": "Unclear",
   "visa_note": "5 certified H-1B LCAs on record (2 in 2025), but a recent Recidiviz posting says sponsorship is not available.",
-  "visa_url": "https://www.ellis.com/visa-sponsors/recidiviz-inc"
+  "visa_url": "https://www.ellis.com/visa-sponsors/recidiviz-inc",
+  "gc": "No filings found",
+  "gc_note": "No green card (PERM) filings on public record."
  },
  {
   "id": "cfc-spm-edtech-innovation",
@@ -73,7 +79,9 @@
   "url": "https://weworkremotely.com/remote-jobs/committee-for-children-senior-product-manager-edtech-innovation",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found for Committee for Children. Ask the recruiter.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "givedirectly-sr-manager-product",
@@ -92,7 +100,9 @@
   "url": "https://job-boards.greenhouse.io/givedirectly",
   "visa": "No",
   "visa_note": "GiveDirectly postings say it can't sponsor or transfer US or UK work visas.",
-  "visa_url": "https://www.remoterocketship.com/ca/company/givedirectly/jobs/senior-manager-united-states-remote/"
+  "visa_url": "https://www.remoterocketship.com/ca/company/givedirectly/jobs/senior-manager-united-states-remote/",
+  "gc": "No",
+  "gc_note": "Posting rules out sponsorship."
  },
  {
   "id": "codeai-pm-curriculum",
@@ -111,7 +121,9 @@
   "url": "https://www.glassdoor.com/Job/remote-curriculum-and-professional-learning-product-manager-jobs-SRCH_IL.0,6_IS11047_KO7,59.htm",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "nava-pm",
@@ -130,7 +142,9 @@
   "url": "https://remotive.com/remote/jobs/product/product-manager-6108865",
   "visa": "No",
   "visa_note": "Nava's own postings require US work authorization without sponsorship, now or later.",
-  "visa_url": "https://job-boards.greenhouse.io/navapbc/jobs/4362045009"
+  "visa_url": "https://job-boards.greenhouse.io/navapbc/jobs/4362045009",
+  "gc": "No",
+  "gc_note": "Posting rules out sponsorship."
  },
  {
   "id": "rivet-spm",
@@ -149,7 +163,9 @@
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "ai-access-initiative-incubation",
@@ -168,7 +184,9 @@
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "code-for-america-lead-pm",
@@ -187,7 +205,9 @@
   "url": "https://bebee.com/us/jobs/remote-lead-product-manager-civic-tech-government-code-for-america-indiana--lensa-7428_f2e79b32234d7e3cefea896a1b03906c9d878b7b450468ffda14eeea56e075c8",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "propel-america-sr-dir-product",
@@ -206,7 +226,9 @@
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "earthjustice-enterprise-pm",
@@ -225,7 +247,9 @@
   "url": "https://techjobsforgood.com/jobs/34551/",
   "visa": "Has sponsored",
   "visa_note": "5 H-1B filings and 1 green card filing since 2021; latest H-1B November 2025. Rare, so confirm for this role.",
-  "visa_url": "https://visa-bulletin.us/employer/earthjustice/"
+  "visa_url": "https://visa-bulletin.us/employer/earthjustice/",
+  "gc": "Files green cards",
+  "gc_note": "1 green card (PERM) filing since 2021."
  },
  {
   "id": "openai-academy-partnerships",
@@ -244,7 +268,9 @@
   "url": "https://startup.jobs/company/openai",
   "visa": "Sponsors",
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
-  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/"
+  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
+  "gc": "Files green cards",
+  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026."
  },
  {
   "id": "cdp-pm",
@@ -263,7 +289,9 @@
   "url": "https://techjobsforgood.com/jobs/36266/",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "great-minds-spm-math",
@@ -282,7 +310,9 @@
   "url": "https://techjobsforgood.com/jobs/35791/",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "willow-pm",
@@ -301,7 +331,9 @@
   "url": "https://www.edtech.com/jobs/product-manager-80212",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
-  "visa_url": null
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way."
  },
  {
   "id": "wikimedia-lead-pm-security",
@@ -320,7 +352,9 @@
   "url": "https://wikimediafoundation.org/jobs/",
   "visa": "Has sponsored",
   "visa_note": "1–2 H-1B LCAs a year recently, with approved petitions in FY2026. Remote hiring outside the US may avoid the need for a visa.",
-  "visa_url": "https://www.ellis.com/visa-sponsors/wikimedia-foundation-inc"
+  "visa_url": "https://www.ellis.com/visa-sponsors/wikimedia-foundation-inc",
+  "gc": "Files green cards",
+  "gc_note": "1 green card petition in FY2026."
  },
  {
   "id": "openai-pm-ai-native-philanthropy",
@@ -339,7 +373,9 @@
   "url": "https://www.indeed.com/q-%22openai%22-%22product-manager%22-jobs.html",
   "visa": "Sponsors",
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
-  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/"
+  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
+  "gc": "Files green cards",
+  "gc_note": "OpenAI has green card (PERM) filings in both FY2025 and FY2026; confirm the Foundation entity does too."
  },
  {
   "id": "openai-pm-learning",
@@ -358,7 +394,9 @@
   "url": "https://jobs.omegavp.com/companies/openai/jobs/91177329-product-manager-learning",
   "visa": "Sponsors",
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
-  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/"
+  "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
+  "gc": "Files green cards",
+  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026."
  },
  {
   "id": "czi-pm-evaluation",
@@ -377,6 +415,8 @@
   "url": "https://job-boards.greenhouse.io/education/jobs/7435343",
   "visa": "Has sponsored",
   "visa_note": "CZI LLC and CZI Foundation filed about 7 H-1B LCAs in 2025, mostly for engineering roles.",
-  "visa_url": "https://www.ellis.com/visa-sponsors/chan-zuckerberg-initiative-llc"
+  "visa_url": "https://www.ellis.com/visa-sponsors/chan-zuckerberg-initiative-llc",
+  "gc": "No filings found",
+  "gc_note": "No green card (PERM) filings found for either CZI entity."
  }
 ]

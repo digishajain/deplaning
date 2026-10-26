@@ -62,7 +62,7 @@
 
   <section class="jb-tiles" id="headline">
     <div class="jb-card jb-tile">
-      <span class="jb-label">Roles at visa sponsors</span>
+      <span class="jb-label">Proven H-1B and green card sponsors</span>
       <span class="jb-big dash-skeleton" data-source="summary" data-field="visa_open" data-row="0"></span>
       <span class="jb-sub"><span class="dash-skeleton" data-source="summary" data-field="visa_remote" data-row="0"></span> of them remote · not closed, fit 70+</span>
     </div>
@@ -72,7 +72,7 @@
       <span class="jb-sub">Found <span class="dash-skeleton" data-source="summary" data-field="latest_seen" data-row="0"></span></span>
     </div>
     <div class="jb-card jb-tile">
-      <span class="jb-label">Best match at a visa sponsor</span>
+      <span class="jb-label">Best match at a proven sponsor</span>
       <span class="jb-big dash-skeleton" data-source="summary" data-field="top_fit" data-row="0"></span>
       <span class="jb-sub dash-skeleton" data-source="summary" data-field="top_role" data-row="0"></span>
     </div>
@@ -85,10 +85,11 @@
 
   <section class="jb-card" id="roles">
     <h2>Open roles, ranked by fit</h2>
-    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site. Visa comes from the posting's own wording, or else the employer's H-1B filings with the Department of Labor: "Sponsors" means many filings or a posting that says so, "Has sponsored" means a few recent filings. Always confirm with the recruiter.</p>
+    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site. With your I-140 approved, you need an employer that files an H-1B transfer (no lottery) and restarts your green card (PERM and a new I-140) while you keep your priority date. H-1B and green card status come from the posting's wording, or else the employer's Department of Labor filings. "Unknown" employers can still say yes, so ask the recruiter about both.</p>
     <div class="jb-controls">
       <input type="search" id="jb-q" placeholder="Search org, title or note" aria-label="Search roles">
-      <button type="button" class="jb-chip" id="jb-visa" aria-pressed="true">Visa sponsors only</button>
+      <button type="button" class="jb-chip" id="jb-nono" aria-pressed="true">Hide no-sponsorship</button>
+      <button type="button" class="jb-chip" id="jb-visa" aria-pressed="false">Proven sponsors only</button>
       <button type="button" class="jb-chip" id="jb-remote" aria-pressed="false">Remote only</button>
       <button type="button" class="jb-chip" id="jb-closed" aria-pressed="false">Show closed</button>
       <span id="jb-sectors" style="display:contents"></span>
@@ -99,7 +100,8 @@
           <th data-field="fit"><button type="button" class="jb-th" data-sort="fit">Fit</button></th>
           <th data-field="title"><button type="button" class="jb-th" data-sort="title">Role</button></th>
           <th data-field="work_mode">Mode</th>
-          <th data-field="visa"><button type="button" class="jb-th" data-sort="visa_rank">Visa</button></th>
+          <th data-field="visa"><button type="button" class="jb-th" data-sort="visa_rank">H-1B</button></th>
+          <th data-field="gc" class="jb-hide-narrow">Green card</th>
           <th data-source="jobs_view" data-field="salary" class="jb-hide-narrow"><button type="button" class="jb-th" data-sort="salary_max">Salary</button></th>
           <th data-field="sector" class="jb-hide-narrow">Sector</th>
           <th data-field="status"><button type="button" class="jb-th" data-sort="status">Status</button></th>
@@ -144,10 +146,10 @@
   dash.calc('summary', {
     inputs: ['jobs'],
     title: 'Headline counts',
-    description: 'Strong matches at employers with visa sponsorship evidence, roles new in the latest refresh, the best sponsored match and totals.',
+    description: 'Strong matches at employers on record sponsoring both H-1B and green cards, roles new in the latest refresh, the best such match and totals.',
     fn: (jobs) => {
       const live = jobs.filter((j) => j.status !== 'Likely closed');
-      const sponsored = live.filter((j) => (j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.fit >= 70);
+      const sponsored = live.filter((j) => (j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.gc === 'Files green cards' && j.fit >= 70);
       const remote = sponsored.filter((j) => j.work_mode === 'Remote');
       const latest = jobs.map((j) => j.first_seen).sort().at(-1) || '';
       const fresh = jobs.filter((j) => j.first_seen === latest);
@@ -163,8 +165,8 @@
         total: jobs.length,
         orgs: new Set(jobs.map((j) => j.org)).size,
         takeaway: (sponsored.length
-          ? sponsored.length + ' strong matches are at employers that sponsor visas, but only ' + remote.length + (remote.length === 1 ? ' is' : ' are') + ' remote' + (topRemote ? ', led by ' + topRemote.org + '’s ' + topRemote.title + '.' : '.') + ' The rest are hybrid or on-site.'
-          : 'No strong match at a visa-sponsoring employer right now.') + ' Most remote nonprofit roles don’t say whether they sponsor.',
+          ? sponsored.length + ' strong matches are at employers on record sponsoring both H-1B and green cards; ' + remote.length + (remote.length === 1 ? ' is' : ' are') + ' remote' + (topRemote ? ' (' + topRemote.org + ')' : '') + '.'
+          : 'No strong match at an employer on record sponsoring both H-1B and green cards right now.') + ' Your approved I-140 means an H-1B transfer skips the lottery, so remote roles marked Unknown are worth asking about.',
       }];
     },
   });
@@ -183,10 +185,12 @@
     },
   });
 
-  const state = { q: '', visaOnly: true, remoteOnly: false, showClosed: false, sector: null, sort: 'fit', dir: -1 };
+  const state = { q: '', hideNo: true, visaOnly: false, remoteOnly: false, showClosed: false, sector: null, sort: 'fit', dir: -1 };
   const q = document.getElementById('jb-q');
   const remoteBtn = document.getElementById('jb-remote');
   const visaBtn = document.getElementById('jb-visa');
+  const noBtn = document.getElementById('jb-nono');
+  const gcClass = { 'Files green cards': 'ok', 'No filings found': 'warn', 'Unknown': 'mode', 'No': 'bad' };
   const visaRank = { 'Sponsors': 4, 'Has sponsored': 3, 'Unclear': 2, 'Unknown': 1, 'No': 0 };
   const visaClass = { 'Sponsors': 'ok', 'Has sponsored': 'ok', 'Unclear': 'warn', 'Unknown': 'mode', 'No': 'bad' };
   const closedBtn = document.getElementById('jb-closed');
@@ -197,6 +201,7 @@
 
   q.addEventListener('input', () => { state.q = q.value.trim().toLowerCase(); drawTable(); });
   visaBtn.addEventListener('click', () => { state.visaOnly = !state.visaOnly; drawTable(); });
+  noBtn.addEventListener('click', () => { state.hideNo = !state.hideNo; drawTable(); });
   remoteBtn.addEventListener('click', () => { state.remoteOnly = !state.remoteOnly; drawTable(); });
   closedBtn.addEventListener('click', () => { state.showClosed = !state.showClosed; drawTable(); });
   table.querySelectorAll('.jb-th').forEach((b) => b.addEventListener('click', () => {
@@ -211,11 +216,12 @@
     const v = dash.data('jobs_view');
     remoteBtn.setAttribute('aria-pressed', state.remoteOnly);
     visaBtn.setAttribute('aria-pressed', state.visaOnly);
+    noBtn.setAttribute('aria-pressed', state.hideNo);
     closedBtn.setAttribute('aria-pressed', state.showClosed);
     tbody.replaceChildren();
     if (d.status === 'error') {
       table.classList.remove('dash-skeleton');
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 7; td.className = 'jb-fail'; td.textContent = 'Failed to load';
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 8; td.className = 'jb-fail'; td.textContent = 'Failed to load';
       return;
     }
     if (d.status !== 'ok') { table.classList.add('dash-skeleton'); return; }
@@ -235,7 +241,8 @@
 
     const shown = rows.filter((j) =>
       (!state.remoteOnly || j.work_mode === 'Remote') &&
-      (!state.visaOnly || j.visa === 'Sponsors' || j.visa === 'Has sponsored') &&
+      (!state.visaOnly || ((j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.gc === 'Files green cards')) &&
+      (!state.hideNo || j.visa !== 'No') &&
       (state.showClosed || j.status !== 'Likely closed') &&
       (!state.sector || j.sector === state.sector) &&
       (!state.q || [j.org, j.title, j.fit_note, j.sector].join(' ').toLowerCase().includes(state.q))
@@ -251,8 +258,8 @@
     });
 
     if (!shown.length) {
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 7; td.className = 'jb-empty';
-      td.textContent = 'No roles match these filters. Turn off Remote only or Visa sponsors only, or clear the search.';
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 8; td.className = 'jb-empty';
+      td.textContent = 'No roles match these filters. Turn off Remote only or Proven sponsors only, or clear the search.';
       return;
     }
     for (const j of shown) {
@@ -287,6 +294,11 @@
         vn.append(va);
       } else vn.textContent = j.visa_note;
       visa.append(vp, vn);
+
+      const gc = tr.insertCell(); gc.className = 'jb-hide-narrow';
+      const gp = document.createElement('span'); gp.className = 'jb-pill ' + (gcClass[j.gc] || 'mode'); gp.textContent = j.gc;
+      const gn = document.createElement('div'); gn.className = 'jb-why'; gn.textContent = j.gc_note;
+      gc.append(gp, gn);
 
       const sal = tr.insertCell(); sal.className = 'jb-hide-narrow'; sal.textContent = salary.get(j.id) ?? '';
       const sec = tr.insertCell(); sec.className = 'jb-hide-narrow'; sec.textContent = j.sector;
