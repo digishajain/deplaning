@@ -1,16 +1,86 @@
 [
-  {"org":"OpenAI Foundation","sector":"AI lab / foundation","signal":"First major hiring round in 2026; staff under 20, aiming to deploy $1B+.","url":"https://openaifoundation.org/news/come-build-the-openai-foundation"},
-  {"org":"Anthropic (Beneficial Deployments)","sector":"AI lab / foundation","signal":"Hiring PMs for AI in health, education and economic opportunity.","url":"https://www.anthropic.com/careers"},
-  {"org":"Gates Foundation","sector":"International development","signal":"Co-funding a $1B, 15-year effort on AI tools for frontline public workers.","url":"https://www.gatesfoundation.org/about/careers"},
-  {"org":"Rockefeller Foundation","sector":"AI lab / foundation","signal":"$18M+ into public-sector AI; runs the $500M Humanity AI pooled fund.","url":"https://www.rockefellerfoundation.org/careers/"},
-  {"org":"Schmidt Sciences","sector":"AI lab / foundation","signal":"AI2050 and AI safety programs.","url":"https://www.schmidtsciences.org/careers/"},
-  {"org":"Patrick J. McGovern Foundation","sector":"AI lab / foundation","signal":"AI-for-good grantmaker with a 2026 grants pipeline in health and journalism.","url":"https://www.mcgovern.org/"},
-  {"org":"Chan Zuckerberg Initiative","sector":"Education","signal":"Product roles are mostly hybrid, 2 days a week in office.","url":"https://chanzuckerberg.com/careers/"},
-  {"org":"Khan Academy","sector":"Education","signal":"Remote US/Canada; keeps a PM talent community open.","url":"https://www.khanacademy.org/careers"},
-  {"org":"DataKind","sector":"Tech for good","signal":"New Director of Product building enterprise products, starting with education.","url":"https://www.datakind.org/"},
-  {"org":"Wikimedia Foundation","sector":"Tech for good","signal":"2025-26 plan funds AI trust & safety product work; remote-first.","url":"https://wikimediafoundation.org/about/jobs/"},
-  {"org":"Dimagi","sector":"International development","signal":"Remote US roles; global health digital tools.","url":"https://dimagi.com/careers/"},
-  {"org":"Digital Green","sector":"International development","signal":"Builds AI advisory tools for smallholder farmers.","url":"https://digitalgreen.org/careers/"},
-  {"org":"Wadhwani AI","sector":"International development","signal":"AI for public health and agriculture in India.","url":"https://www.wadhwaniai.org/careers/"},
-  {"org":"Google.org","sector":"AI lab / foundation","signal":"Runs AI-for-social-good accelerators.","url":"https://www.google.org/"}
+ {
+  "org": "OpenAI Foundation",
+  "sector": "AI lab / foundation",
+  "signal": "First major hiring round in 2026; staff under 20, aiming to deploy $1B+. Visa: OpenAI files 200+ H-1B LCAs a year.",
+  "url": "https://openaifoundation.org/news/come-build-the-openai-foundation"
+ },
+ {
+  "org": "Anthropic (Beneficial Deployments)",
+  "sector": "AI lab / foundation",
+  "signal": "Hiring PMs for AI in health, education and economic opportunity. Visa: sponsors, 156 H-1B LCAs in 2025.",
+  "url": "https://www.anthropic.com/careers"
+ },
+ {
+  "org": "Gates Foundation",
+  "sector": "International development",
+  "signal": "Co-funding a $1B, 15-year effort on AI tools for frontline public workers. Visa: 13 H-1B LCAs in 2025.",
+  "url": "https://www.gatesfoundation.org/about/careers"
+ },
+ {
+  "org": "Rockefeller Foundation",
+  "sector": "AI lab / foundation",
+  "signal": "$18M+ into public-sector AI; runs the $500M Humanity AI pooled fund.",
+  "url": "https://www.rockefellerfoundation.org/careers/"
+ },
+ {
+  "org": "Schmidt Sciences",
+  "sector": "AI lab / foundation",
+  "signal": "AI2050 and AI safety programs.",
+  "url": "https://www.schmidtsciences.org/careers/"
+ },
+ {
+  "org": "Patrick J. McGovern Foundation",
+  "sector": "AI lab / foundation",
+  "signal": "AI-for-good grantmaker with a 2026 grants pipeline in health and journalism.",
+  "url": "https://www.mcgovern.org/"
+ },
+ {
+  "org": "Chan Zuckerberg Initiative",
+  "sector": "Education",
+  "signal": "Product roles are mostly hybrid, 2 days a week in office. Visa: a few H-1B LCAs a year.",
+  "url": "https://chanzuckerberg.com/careers/"
+ },
+ {
+  "org": "Khan Academy",
+  "sector": "Education",
+  "signal": "Remote US/Canada; keeps a PM talent community open. Visa: 1–2 H-1B LCAs a year.",
+  "url": "https://www.khanacademy.org/careers"
+ },
+ {
+  "org": "DataKind",
+  "sector": "Tech for good",
+  "signal": "New Director of Product building enterprise products, starting with education.",
+  "url": "https://www.datakind.org/"
+ },
+ {
+  "org": "Wikimedia Foundation",
+  "sector": "Tech for good",
+  "signal": "2025-26 plan funds AI trust & safety product work; remote-first. Visa: 1–2 H-1B LCAs a year.",
+  "url": "https://wikimediafoundation.org/about/jobs/"
+ },
+ {
+  "org": "Dimagi",
+  "sector": "International development",
+  "signal": "Remote US roles; global health digital tools.",
+  "url": "https://dimagi.com/careers/"
+ },
+ {
+  "org": "Digital Green",
+  "sector": "International development",
+  "signal": "Builds AI advisory tools for smallholder farmers.",
+  "url": "https://digitalgreen.org/careers/"
+ },
+ {
+  "org": "Wadhwani AI",
+  "sector": "International development",
+  "signal": "AI for public health and agriculture in India.",
+  "url": "https://www.wadhwaniai.org/careers/"
+ },
+ {
+  "org": "Google.org",
+  "sector": "AI lab / foundation",
+  "signal": "Runs AI-for-social-good accelerators.",
+  "url": "https://www.google.org/"
+ }
 ]

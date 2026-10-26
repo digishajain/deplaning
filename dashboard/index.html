@@ -62,9 +62,9 @@
 
   <section class="jb-tiles" id="headline">
     <div class="jb-card jb-tile">
-      <span class="jb-label">Remote roles worth applying to</span>
-      <span class="jb-big dash-skeleton" data-source="summary" data-field="remote_open" data-row="0"></span>
-      <span class="jb-sub">Remote, not closed, fit 70+</span>
+      <span class="jb-label">Roles at visa sponsors</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="visa_open" data-row="0"></span>
+      <span class="jb-sub"><span class="dash-skeleton" data-source="summary" data-field="visa_remote" data-row="0"></span> of them remote · not closed, fit 70+</span>
     </div>
     <div class="jb-card jb-tile">
       <span class="jb-label">New in latest refresh</span>
@@ -72,7 +72,7 @@
       <span class="jb-sub">Found <span class="dash-skeleton" data-source="summary" data-field="latest_seen" data-row="0"></span></span>
     </div>
     <div class="jb-card jb-tile">
-      <span class="jb-label">Best match</span>
+      <span class="jb-label">Best match at a visa sponsor</span>
       <span class="jb-big dash-skeleton" data-source="summary" data-field="top_fit" data-row="0"></span>
       <span class="jb-sub dash-skeleton" data-source="summary" data-field="top_role" data-row="0"></span>
     </div>
@@ -85,10 +85,11 @@
 
   <section class="jb-card" id="roles">
     <h2>Open roles, ranked by fit</h2>
-    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site.</p>
+    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site. Visa comes from the posting's own wording, or else the employer's H-1B filings with the Department of Labor: "Sponsors" means many filings or a posting that says so, "Has sponsored" means a few recent filings. Always confirm with the recruiter.</p>
     <div class="jb-controls">
       <input type="search" id="jb-q" placeholder="Search org, title or note" aria-label="Search roles">
-      <button type="button" class="jb-chip" id="jb-remote" aria-pressed="true">Remote only</button>
+      <button type="button" class="jb-chip" id="jb-visa" aria-pressed="true">Visa sponsors only</button>
+      <button type="button" class="jb-chip" id="jb-remote" aria-pressed="false">Remote only</button>
       <button type="button" class="jb-chip" id="jb-closed" aria-pressed="false">Show closed</button>
       <span id="jb-sectors" style="display:contents"></span>
     </div>
@@ -98,6 +99,7 @@
           <th data-field="fit"><button type="button" class="jb-th" data-sort="fit">Fit</button></th>
           <th data-field="title"><button type="button" class="jb-th" data-sort="title">Role</button></th>
           <th data-field="work_mode">Mode</th>
+          <th data-field="visa"><button type="button" class="jb-th" data-sort="visa_rank">Visa</button></th>
           <th data-source="jobs_view" data-field="salary" class="jb-hide-narrow"><button type="button" class="jb-th" data-sort="salary_max">Salary</button></th>
           <th data-field="sector" class="jb-hide-narrow">Sector</th>
           <th data-field="status"><button type="button" class="jb-th" data-sort="status">Status</button></th>
@@ -142,25 +144,27 @@
   dash.calc('summary', {
     inputs: ['jobs'],
     title: 'Headline counts',
-    description: 'Remote strong matches, roles new in the latest refresh, the best match and totals.',
+    description: 'Strong matches at employers with visa sponsorship evidence, roles new in the latest refresh, the best sponsored match and totals.',
     fn: (jobs) => {
       const live = jobs.filter((j) => j.status !== 'Likely closed');
-      const remote = live.filter((j) => j.work_mode === 'Remote' && j.fit >= 70);
+      const sponsored = live.filter((j) => (j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.fit >= 70);
+      const remote = sponsored.filter((j) => j.work_mode === 'Remote');
       const latest = jobs.map((j) => j.first_seen).sort().at(-1) || '';
       const fresh = jobs.filter((j) => j.first_seen === latest);
-      const top = [...live].sort((a, b) => b.fit - a.fit)[0];
+      const top = [...sponsored].sort((a, b) => b.fit - a.fit)[0];
       const topRemote = [...remote].sort((a, b) => b.fit - a.fit)[0];
       return [{
-        remote_open: remote.length,
+        visa_open: sponsored.length,
+        visa_remote: remote.length,
         new_latest: fresh.length,
         latest_seen: latest,
         top_fit: top ? top.fit : null,
         top_role: top ? top.org + ' · ' + top.title : '',
         total: jobs.length,
         orgs: new Set(jobs.map((j) => j.org)).size,
-        takeaway: topRemote
-          ? remote.length + ' remote roles fit your AI product background. Start with ' + topRemote.org + '’s ' + topRemote.title + ' (fit ' + topRemote.fit + ').'
-          : 'No remote role scores 70+ right now. The watchlist shows where new ones are likely.',
+        takeaway: (sponsored.length
+          ? sponsored.length + ' strong matches are at employers that sponsor visas, but only ' + remote.length + (remote.length === 1 ? ' is' : ' are') + ' remote' + (topRemote ? ', led by ' + topRemote.org + '’s ' + topRemote.title + '.' : '.') + ' The rest are hybrid or on-site.'
+          : 'No strong match at a visa-sponsoring employer right now.') + ' Most remote nonprofit roles don’t say whether they sponsor.',
       }];
     },
   });
@@ -179,9 +183,12 @@
     },
   });
 
-  const state = { q: '', remoteOnly: true, showClosed: false, sector: null, sort: 'fit', dir: -1 };
+  const state = { q: '', visaOnly: true, remoteOnly: false, showClosed: false, sector: null, sort: 'fit', dir: -1 };
   const q = document.getElementById('jb-q');
   const remoteBtn = document.getElementById('jb-remote');
+  const visaBtn = document.getElementById('jb-visa');
+  const visaRank = { 'Sponsors': 4, 'Has sponsored': 3, 'Unclear': 2, 'Unknown': 1, 'No': 0 };
+  const visaClass = { 'Sponsors': 'ok', 'Has sponsored': 'ok', 'Unclear': 'warn', 'Unknown': 'mode', 'No': 'bad' };
   const closedBtn = document.getElementById('jb-closed');
   const sectorBox = document.getElementById('jb-sectors');
   const table = document.getElementById('jb-table');
@@ -189,6 +196,7 @@
   const statusClass = { 'Likely open': 'ok', 'Verify': 'warn', 'Likely closed': 'bad' };
 
   q.addEventListener('input', () => { state.q = q.value.trim().toLowerCase(); drawTable(); });
+  visaBtn.addEventListener('click', () => { state.visaOnly = !state.visaOnly; drawTable(); });
   remoteBtn.addEventListener('click', () => { state.remoteOnly = !state.remoteOnly; drawTable(); });
   closedBtn.addEventListener('click', () => { state.showClosed = !state.showClosed; drawTable(); });
   table.querySelectorAll('.jb-th').forEach((b) => b.addEventListener('click', () => {
@@ -202,11 +210,12 @@
     const d = dash.data('jobs');
     const v = dash.data('jobs_view');
     remoteBtn.setAttribute('aria-pressed', state.remoteOnly);
+    visaBtn.setAttribute('aria-pressed', state.visaOnly);
     closedBtn.setAttribute('aria-pressed', state.showClosed);
     tbody.replaceChildren();
     if (d.status === 'error') {
       table.classList.remove('dash-skeleton');
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 6; td.className = 'jb-fail'; td.textContent = 'Failed to load';
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 7; td.className = 'jb-fail'; td.textContent = 'Failed to load';
       return;
     }
     if (d.status !== 'ok') { table.classList.add('dash-skeleton'); return; }
@@ -226,11 +235,13 @@
 
     const shown = rows.filter((j) =>
       (!state.remoteOnly || j.work_mode === 'Remote') &&
+      (!state.visaOnly || j.visa === 'Sponsors' || j.visa === 'Has sponsored') &&
       (state.showClosed || j.status !== 'Likely closed') &&
       (!state.sector || j.sector === state.sector) &&
       (!state.q || [j.org, j.title, j.fit_note, j.sector].join(' ').toLowerCase().includes(state.q))
     ).sort((a, b) => {
-      const x = a[state.sort] ?? -1, y = b[state.sort] ?? -1;
+      const val = (r) => state.sort === 'visa_rank' ? visaRank[r.visa] ?? -1 : r[state.sort] ?? -1;
+      const x = val(a), y = val(b);
       return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y))) * state.dir;
     });
 
@@ -240,8 +251,8 @@
     });
 
     if (!shown.length) {
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 6; td.className = 'jb-empty';
-      td.textContent = 'No roles match these filters. Turn off Remote only or clear the search.';
+      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 7; td.className = 'jb-empty';
+      td.textContent = 'No roles match these filters. Turn off Remote only or Visa sponsors only, or clear the search.';
       return;
     }
     for (const j of shown) {
@@ -267,6 +278,15 @@
       const mp = document.createElement('span'); mp.className = 'jb-pill mode'; mp.textContent = j.work_mode;
       const loc = document.createElement('div'); loc.className = 'jb-why'; loc.textContent = j.location;
       mode.append(mp, loc);
+
+      const visa = tr.insertCell();
+      const vp = document.createElement('span'); vp.className = 'jb-pill ' + (visaClass[j.visa] || 'mode'); vp.textContent = j.visa;
+      const vn = document.createElement('div'); vn.className = 'jb-why';
+      if (j.visa_url) {
+        const va = document.createElement('a'); va.href = j.visa_url; va.target = '_blank'; va.rel = 'noopener'; va.textContent = j.visa_note; va.style.color = 'inherit';
+        vn.append(va);
+      } else vn.textContent = j.visa_note;
+      visa.append(vp, vn);
 
       const sal = tr.insertCell(); sal.className = 'jb-hide-narrow'; sal.textContent = salary.get(j.id) ?? '';
       const sec = tr.insertCell(); sec.className = 'jb-hide-narrow'; sec.textContent = j.sector;

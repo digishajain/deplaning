@@ -23,6 +23,26 @@ in education policy.
   `Education`, `International development`, `Civic tech`.
 - **Work mode:** `Remote` (preferred), `Hybrid`, or `On-site`.
 
+## Visa sponsorship (required)
+
+Digisha needs employers that sponsor work visas (H-1B). Record it on every row:
+
+- `Sponsors`: the posting says the employer sponsors, or the employer has many
+  recent H-1B LCA filings (roughly 10+ a year).
+- `Has sponsored`: a few H-1B filings in the last two years.
+- `Unclear`: the evidence conflicts, for example filings exist but a posting
+  says no sponsorship.
+- `Unknown`: no posting language and no filings found.
+- `No`: the posting says no sponsorship or requires authorization without sponsorship.
+
+The posting's own wording beats filing data. To check filings, search for
+`"<employer>" H-1B LCA`, using sources such as ellis.com, myvisajobs.com and
+visaverge.com, which compile Department of Labor disclosure data. Write
+`visa_note` as one sentence with the evidence, and `visa_url` as the source,
+or null. Prefer roles at `Sponsors` and `Has sponsored` employers when
+searching. Remote roles open to candidates outside the US are worth noting,
+since they may not need a visa.
+
 ## Fit score (0–100)
 
 | Part | Points |
@@ -39,7 +59,8 @@ in education policy.
 ```json
 {"id":"org-short-title","org":"","title":"","sector":"","work_mode":"Remote","location":"",
  "salary_min":null,"salary_max":null,"posted":"YYYY-MM-DD or null","first_seen":"YYYY-MM-DD",
- "status":"Likely open | Verify | Likely closed","fit":0,"fit_note":"","url":""}
+ "status":"Likely open | Verify | Likely closed","fit":0,"fit_note":"","url":"",
+ "visa":"Sponsors | Has sponsored | Unclear | Unknown | No","visa_note":"","visa_url":null}
 ```
 
 `status`: use `Likely open` when a dated posting is from the last 30 days.
