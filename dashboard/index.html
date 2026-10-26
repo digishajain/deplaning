@@ -2,7 +2,7 @@
   .jb { display: grid; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
   .jb-head { display: grid; gap: var(--cds-gap-xs); }
   .jb-head h1 { margin: 0; font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); }
-  .jb-takeaway { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); max-width: 70ch; }
+  .jb-takeaway { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); max-width: 75ch; }
   .jb-tiles { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr)); }
   .jb-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); min-width: 0; }
   .jb-tile { display: grid; gap: var(--cds-gap-xs); align-content: start; }
@@ -10,11 +10,17 @@
   .jb-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; min-height: 1.2em; }
   .jb-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); min-height: 1.2em; }
   .jb-card h2 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
-  .jb-note { margin: var(--cds-gap-xs) 0 var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .jb-note { margin: var(--cds-gap-xs) 0 var(--cds-gap-md); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); max-width: 90ch; }
   .jb-row2 { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); }
+  .jb-actions { display: grid; gap: var(--cds-gap-sm); grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); min-height: 6rem; }
+  .jb-action { display: grid; gap: 4px; align-content: start; padding: var(--cds-pad-sm) var(--cds-pad-md); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); font-size: var(--cds-font-size-caption); }
+  .jb-action strong { font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+  .jb-action-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; color: var(--color-fg-muted); }
+  .jb-action-why { color: var(--color-fg-muted); }
+  .jb-action a { color: var(--color-fg); }
   .jb-bars { display: grid; gap: var(--cds-gap-sm); min-height: 8rem; }
   .jb-bar { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr 2rem; gap: var(--cds-gap-sm); align-items: center; font-size: var(--cds-font-size-caption); }
-  .jb-bar-track { height: 14px; }
+  .jb-bar-track { height: 14px; display: flex; gap: 2px; }
   .jb-bar-fill { height: 100%; border-radius: 4px; background: var(--cds-chart-muted); }
   .jb-bar-fill.is-remote { background: var(--jb-accent); }
   .jb-bar-n { text-align: right; font-variant-numeric: tabular-nums; }
@@ -24,29 +30,37 @@
   .jb-controls input[type=search] { flex: 1 1 14rem; min-width: 0; padding: var(--cds-pad-xs) var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); background: var(--color-bg); color: var(--color-fg); font: inherit; }
   .jb-chip { font: inherit; font-size: var(--cds-font-size-caption); padding: 4px 10px; border-radius: 999px; border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg); cursor: pointer; }
   .jb-chip[aria-pressed=true] { background: var(--color-fg); color: var(--color-bg); border-color: var(--color-fg); }
-  .jb-chip:focus-visible, .jb-th:focus-visible { outline: 2px solid var(--jb-accent); outline-offset: 2px; }
-  .jb-tablebox { overflow: auto; max-height: 36rem; }
+  .jb-chip:focus-visible, .jb-th:focus-visible, .jb-role summary:focus-visible { outline: 2px solid var(--jb-accent); outline-offset: 2px; }
+  .jb-tablebox { overflow: auto; max-height: 44rem; }
   .jb-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
-  .jb-table th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
+  .jb-table th { position: sticky; top: 0; z-index: 1; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); white-space: nowrap; }
   .jb-th { all: unset; cursor: pointer; }
   .jb-table td { padding: var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); vertical-align: top; }
   .jb-table tr.is-new td:first-child { box-shadow: inset 3px 0 0 var(--jb-accent); }
-  .jb-fit { display: grid; grid-template-columns: 2rem 4rem; gap: 6px; align-items: center; }
+  .jb-fit { display: grid; grid-template-columns: 2rem 3.5rem; gap: 6px; align-items: center; }
   .jb-fit-track { height: 6px; background: var(--color-border-line); border-radius: 3px; overflow: hidden; }
   .jb-fit-fill { height: 100%; background: var(--jb-accent); border-radius: 3px; }
+  .jb-role { min-width: 16rem; }
   .jb-role a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
   .jb-org { color: var(--color-fg-muted); }
-  .jb-why { color: var(--color-fg-muted); margin-top: 2px; max-width: 46ch; }
+  .jb-why { color: var(--color-fg-muted); margin-top: 2px; max-width: 52ch; }
+  .jb-role summary { cursor: pointer; color: var(--color-fg-muted); margin-top: 4px; width: fit-content; }
+  .jb-detail { display: grid; gap: var(--cds-gap-sm); margin-top: var(--cds-gap-sm); padding: var(--cds-pad-sm) var(--cds-pad-md); border-radius: var(--cds-radius); background: var(--color-bg); border: 1px solid var(--color-border-line); max-width: 60ch; }
+  .jb-detail h3 { margin: 0; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); }
+  .jb-detail ul { margin: 2px 0 0; padding-left: 1.1rem; display: grid; gap: 2px; }
+  .jb-scores { display: flex; flex-wrap: wrap; gap: var(--cds-gap-md); }
   .jb-pill { display: inline-block; padding: 1px 8px; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
   .jb-pill.ok { color: var(--color-ok); }
   .jb-pill.warn { color: var(--color-warn); }
   .jb-pill.bad { color: var(--color-bad); }
   .jb-pill.mode { color: var(--color-fg-muted); }
   .jb-empty { padding: var(--cds-pad-lg); text-align: center; color: var(--color-fg-muted); }
-  .jb-watch { display: grid; gap: var(--cds-gap-sm); min-height: 8rem; }
-  .jb-watch-item { display: grid; gap: 2px; font-size: var(--cds-font-size-caption); padding-bottom: var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); }
-  .jb-watch-item a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
-  .jb-watch-item span { color: var(--color-fg-muted); }
+  .jb-list { display: grid; gap: var(--cds-gap-sm); min-height: 8rem; }
+  .jb-list-item { display: grid; gap: 2px; font-size: var(--cds-font-size-caption); padding-bottom: var(--cds-gap-sm); border-bottom: 1px solid var(--color-border-line); }
+  .jb-list-item a { color: var(--color-fg); font-weight: var(--cds-font-weight-medium); }
+  .jb-list-item span { color: var(--color-fg-muted); }
+  .jb-group { font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); margin-top: var(--cds-gap-sm); }
+  .jb-sources { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); min-height: 8rem; }
   .jb-fail { display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); min-height: 6rem; }
   .jb-fail::before { content: ""; width: .375rem; height: .375rem; border-radius: 50%; background: var(--color-bad); }
   [data-dash-source-state=empty] { color: transparent; }
@@ -64,7 +78,7 @@
     <div class="jb-card jb-tile">
       <span class="jb-label">Proven H-1B and green card sponsors</span>
       <span class="jb-big dash-skeleton" data-source="summary" data-field="visa_open" data-row="0"></span>
-      <span class="jb-sub"><span class="dash-skeleton" data-source="summary" data-field="visa_remote" data-row="0"></span> of them remote · not closed, fit 70+</span>
+      <span class="jb-sub"><span class="dash-skeleton" data-source="summary" data-field="visa_remote" data-row="0"></span> of them remote · not closed, match 70+</span>
     </div>
     <div class="jb-card jb-tile">
       <span class="jb-label">New in latest refresh</span>
@@ -72,22 +86,28 @@
       <span class="jb-sub">Found <span class="dash-skeleton" data-source="summary" data-field="latest_seen" data-row="0"></span></span>
     </div>
     <div class="jb-card jb-tile">
-      <span class="jb-label">Best match at a proven sponsor</span>
-      <span class="jb-big dash-skeleton" data-source="summary" data-field="top_fit" data-row="0"></span>
+      <span class="jb-label">Best overall match</span>
+      <span class="jb-big dash-skeleton" data-source="summary" data-field="top_score" data-row="0"></span>
       <span class="jb-sub dash-skeleton" data-source="summary" data-field="top_role" data-row="0"></span>
     </div>
     <div class="jb-card jb-tile">
-      <span class="jb-label">Leads tracked</span>
+      <span class="jb-label">PM roles tracked</span>
       <span class="jb-big dash-skeleton" data-source="summary" data-field="total" data-row="0"></span>
       <span class="jb-sub">Across <span class="dash-skeleton" data-source="summary" data-field="orgs" data-row="0"></span> organizations</span>
     </div>
   </section>
 
+  <section class="jb-card" id="do-first">
+    <h2>Do these first</h2>
+    <p class="jb-note">Certifications and showcase work ranked by how many open roles they help with, weighted by match. Open any role below for its own checklist.</p>
+    <div class="jb-actions dash-skeleton" data-source="top_actions"></div>
+  </section>
+
   <section class="jb-card" id="roles">
-    <h2>Open roles, ranked by fit</h2>
-    <p class="jb-note">Fit is scored 0–100 against your AIPM resume: remote (30), Senior PM or AI PM level (25), AI at the core (25), sector match (20). A stripe marks roles new in the latest refresh. Status "Verify" means the posting came from an aggregator and needs a check on the employer's site. With your I-140 approved, you need an employer that files an H-1B transfer (no lottery) and restarts your green card (PERM and a new I-140) while you keep your priority date. H-1B and green card status come from the posting's wording, or else the employer's Department of Labor filings. "Unknown" employers can still say yes, so ask the recruiter about both.</p>
+    <h2>Open PM roles, ranked by match</h2>
+    <p class="jb-note">Match averages two scores. Resume match is how well your AIPM resume covers the role's requirements. Preference fit is remote (30), level (25), AI at the core (25) and sector (20). Open "Fit and prep" on a role for strengths, gaps and what to do before applying. A stripe marks roles new in the latest refresh. H-1B and green card status come from the posting or the employer's Department of Labor filings; "Unknown" employers can still say yes, so ask.</p>
     <div class="jb-controls">
-      <input type="search" id="jb-q" placeholder="Search org, title or note" aria-label="Search roles">
+      <input type="search" id="jb-q" placeholder="Search org, title or notes" aria-label="Search roles">
       <button type="button" class="jb-chip" id="jb-nono" aria-pressed="true">Hide no-sponsorship</button>
       <button type="button" class="jb-chip" id="jb-visa" aria-pressed="false">Proven sponsors only</button>
       <button type="button" class="jb-chip" id="jb-remote" aria-pressed="false">Remote only</button>
@@ -97,13 +117,12 @@
     <div class="jb-tablebox">
       <table class="jb-table dash-skeleton" id="jb-table" data-source="jobs" data-row-key="id">
         <thead><tr>
-          <th data-field="fit"><button type="button" class="jb-th" data-sort="fit">Fit</button></th>
+          <th data-source="jobs_view" data-field="score"><button type="button" class="jb-th" data-sort="score">Match</button></th>
           <th data-field="title"><button type="button" class="jb-th" data-sort="title">Role</button></th>
           <th data-field="work_mode">Mode</th>
           <th data-field="visa"><button type="button" class="jb-th" data-sort="visa_rank">H-1B</button></th>
           <th data-field="gc" class="jb-hide-narrow">Green card</th>
           <th data-source="jobs_view" data-field="salary" class="jb-hide-narrow"><button type="button" class="jb-th" data-sort="salary_max">Salary</button></th>
-          <th data-field="sector" class="jb-hide-narrow">Sector</th>
           <th data-field="status"><button type="button" class="jb-th" data-sort="status">Status</button></th>
         </tr></thead>
         <tbody></tbody>
@@ -114,29 +133,34 @@
   <section class="jb-row2">
     <div class="jb-card" id="by-sector">
       <h2>Where the roles are</h2>
-      <p class="jb-note">Leads per sector that are not closed.</p>
+      <p class="jb-note">PM roles per sector that are not closed.</p>
       <div class="jb-bars dash-skeleton" data-source="by_sector"></div>
       <div class="jb-legend"><span><i style="background:var(--jb-accent)"></i>Remote</span><span><i style="background:var(--cds-chart-muted)"></i>Hybrid or on-site</span></div>
     </div>
     <div class="jb-card" id="watchlist">
       <h2>Organizations to watch</h2>
-      <p class="jb-note">Funders and builders scaling AI-for-good work with no matching opening yet. Each refresh checks them for new roles.</p>
-      <div class="jb-watch dash-skeleton" data-source="watchlist"></div>
+      <p class="jb-note">Funders and builders scaling AI-for-good work with no matching opening yet. Each refresh checks them.</p>
+      <div class="jb-list dash-skeleton" data-source="watchlist"></div>
     </div>
+  </section>
+
+  <section class="jb-card" id="sources">
+    <h2>Where to look and who to follow</h2>
+    <p class="jb-note">Job boards, newsletters and people who post social impact and AI openings. Each daily refresh searches these.</p>
+    <div class="jb-sources dash-skeleton" data-source="sources"></div>
   </section>
 </div>
 
 <script>
   document.getElementById('dash-root').style.setProperty('--jb-accent', dash.colors[0]);
 
-  const money = (n) => '$' + Math.round(n / 1000) + 'K';
-
   dash.calc('jobs_view', {
     inputs: ['jobs'],
-    title: 'Salary range shown',
-    description: 'Each role’s posted salary range, formatted for the table.',
+    title: 'Match and salary shown',
+    description: 'Overall match (average of resume match and preference fit) and the posted salary range, per role.',
     fn: (jobs) => jobs.map((j) => ({
       id: j.id,
+      score: Math.round((j.fit + j.resume_match) / 2),
       salary: j.salary_min == null ? 'Not posted'
         : j.salary_min === j.salary_max ? '$' + Math.round(j.salary_min / 1000) + 'K'
         : '$' + Math.round(j.salary_min / 1000) + 'K–' + Math.round(j.salary_max / 1000) + 'K',
@@ -146,28 +170,41 @@
   dash.calc('summary', {
     inputs: ['jobs'],
     title: 'Headline counts',
-    description: 'Strong matches at employers on record sponsoring both H-1B and green cards, roles new in the latest refresh, the best such match and totals.',
+    description: 'Strong matches at employers on record sponsoring both H-1B and green cards, roles new in the latest refresh, the best overall match and totals.',
     fn: (jobs) => {
+      const score = (j) => Math.round((j.fit + j.resume_match) / 2);
       const live = jobs.filter((j) => j.status !== 'Likely closed');
-      const sponsored = live.filter((j) => (j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.gc === 'Files green cards' && j.fit >= 70);
+      const sponsored = live.filter((j) => (j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.gc === 'Files green cards' && score(j) >= 70);
       const remote = sponsored.filter((j) => j.work_mode === 'Remote');
       const latest = jobs.map((j) => j.first_seen).sort().at(-1) || '';
       const fresh = jobs.filter((j) => j.first_seen === latest);
-      const top = [...sponsored].sort((a, b) => b.fit - a.fit)[0];
-      const topRemote = [...remote].sort((a, b) => b.fit - a.fit)[0];
+      const top = live.filter((j) => j.visa !== 'No').sort((a, b) => score(b) - score(a))[0];
       return [{
         visa_open: sponsored.length,
         visa_remote: remote.length,
         new_latest: fresh.length,
         latest_seen: latest,
-        top_fit: top ? top.fit : null,
+        top_score: top ? score(top) : null,
         top_role: top ? top.org + ' · ' + top.title : '',
         total: jobs.length,
         orgs: new Set(jobs.map((j) => j.org)).size,
-        takeaway: (sponsored.length
-          ? sponsored.length + ' strong matches are at employers on record sponsoring both H-1B and green cards; ' + remote.length + (remote.length === 1 ? ' is' : ' are') + ' remote' + (topRemote ? ' (' + topRemote.org + ')' : '') + '.'
-          : 'No strong match at an employer on record sponsoring both H-1B and green cards right now.') + ' Your approved I-140 means an H-1B transfer skips the lottery, so remote roles marked Unknown are worth asking about.',
+        takeaway: (top ? 'Your strongest match is ' + top.org + '’s ' + top.title + ' (' + score(top) + '). ' : '')
+          + sponsored.length + ' strong matches are at employers on record sponsoring both H-1B and green cards, '
+          + remote.length + ' of them remote. With your approved I-140 an H-1B transfer skips the lottery, so remote roles marked Unknown are worth asking about.',
       }];
+    },
+  });
+
+  dash.calc('top_actions', {
+    inputs: ['jobs', 'actions'],
+    title: 'Most useful prep',
+    description: 'Each prep action’s total weight: the sum of match scores of open roles (excluding no-sponsorship) that list it.',
+    fn: (jobs, actions) => {
+      const live = jobs.filter((j) => j.status !== 'Likely closed' && j.visa !== 'No');
+      return actions.map((a) => {
+        const roles = live.filter((j) => (j.prep || []).includes(a.id));
+        return { ...a, roles: roles.length, weight: roles.reduce((s, j) => s + Math.round((j.fit + j.resume_match) / 2), 0) };
+      }).filter((a) => a.roles > 0).sort((x, y) => y.weight - x.weight);
     },
   });
 
@@ -185,25 +222,25 @@
     },
   });
 
-  const state = { q: '', hideNo: true, visaOnly: false, remoteOnly: false, showClosed: false, sector: null, sort: 'fit', dir: -1 };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const link = (href, text) => { const a = el('a', null, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; };
+  const fail = (box) => { box.classList.remove('dash-skeleton'); box.replaceChildren(el('div', 'jb-fail', 'Failed to load')); };
+
+  const state = { q: '', hideNo: true, visaOnly: false, remoteOnly: false, showClosed: false, sector: null, sort: 'score', dir: -1, open: new Set() };
   const q = document.getElementById('jb-q');
-  const remoteBtn = document.getElementById('jb-remote');
-  const visaBtn = document.getElementById('jb-visa');
-  const noBtn = document.getElementById('jb-nono');
-  const gcClass = { 'Files green cards': 'ok', 'No filings found': 'warn', 'Unknown': 'mode', 'No': 'bad' };
-  const visaRank = { 'Sponsors': 4, 'Has sponsored': 3, 'Unclear': 2, 'Unknown': 1, 'No': 0 };
-  const visaClass = { 'Sponsors': 'ok', 'Has sponsored': 'ok', 'Unclear': 'warn', 'Unknown': 'mode', 'No': 'bad' };
-  const closedBtn = document.getElementById('jb-closed');
+  const btn = { hideNo: 'jb-nono', visaOnly: 'jb-visa', remoteOnly: 'jb-remote', showClosed: 'jb-closed' };
   const sectorBox = document.getElementById('jb-sectors');
   const table = document.getElementById('jb-table');
   const tbody = table.querySelector('tbody');
   const statusClass = { 'Likely open': 'ok', 'Verify': 'warn', 'Likely closed': 'bad' };
+  const visaRank = { 'Sponsors': 4, 'Has sponsored': 3, 'Unclear': 2, 'Unknown': 1, 'No': 0 };
+  const visaClass = { 'Sponsors': 'ok', 'Has sponsored': 'ok', 'Unclear': 'warn', 'Unknown': 'mode', 'No': 'bad' };
+  const gcClass = { 'Files green cards': 'ok', 'No filings found': 'warn', 'Unknown': 'mode', 'No': 'bad' };
 
   q.addEventListener('input', () => { state.q = q.value.trim().toLowerCase(); drawTable(); });
-  visaBtn.addEventListener('click', () => { state.visaOnly = !state.visaOnly; drawTable(); });
-  noBtn.addEventListener('click', () => { state.hideNo = !state.hideNo; drawTable(); });
-  remoteBtn.addEventListener('click', () => { state.remoteOnly = !state.remoteOnly; drawTable(); });
-  closedBtn.addEventListener('click', () => { state.showClosed = !state.showClosed; drawTable(); });
+  for (const [key, id] of Object.entries(btn)) {
+    document.getElementById(id).addEventListener('click', () => { state[key] = !state[key]; drawTable(); });
+  }
   table.querySelectorAll('.jb-th').forEach((b) => b.addEventListener('click', () => {
     const key = b.dataset.sort;
     state.dir = state.sort === key ? -state.dir : (key === 'title' || key === 'status' ? 1 : -1);
@@ -211,43 +248,75 @@
     drawTable();
   }));
 
+  function detail(j, actionsById) {
+    const d = el('details');
+    d.open = state.open.has(j.id);
+    d.addEventListener('toggle', () => { d.open ? state.open.add(j.id) : state.open.delete(j.id); });
+    d.append(el('summary', null, 'Fit and prep'));
+    const box = el('div', 'jb-detail');
+    const p = j.fit_parts || {};
+    const scores = el('div', 'jb-scores');
+    scores.append(el('span', null, 'Resume match ' + j.resume_match), el('span', null, 'Preference fit ' + j.fit + ' (remote ' + p.remote + '/30 · level ' + p.level + '/25 · AI ' + p.ai + '/25 · sector ' + p.sector + '/20)'));
+    box.append(scores);
+    const section = (title, items) => {
+      if (!items.length) return;
+      const ul = el('ul');
+      items.forEach((it) => ul.append(typeof it === 'string' ? el('li', null, it) : it));
+      box.append(el('h3', null, title), ul);
+    };
+    section('Where your resume matches', j.strengths || []);
+    section('Gaps to address', j.gaps || []);
+    const prep = (j.prep || []).map((id) => actionsById.get(id)).filter(Boolean).map((a) => {
+      const li = el('li');
+      li.append(a.url ? link(a.url, a.action) : document.createTextNode(a.action), el('span', 'jb-org', ' · ' + a.kind + ', ' + a.effort));
+      return li;
+    });
+    if (j.prep_specific) prep.unshift(el('li', null, j.prep_specific));
+    section('Prepare before applying', prep);
+    const visa = el('li');
+    visa.append(j.visa_url ? link(j.visa_url, 'H-1B: ' + j.visa_note) : document.createTextNode('H-1B: ' + j.visa_note));
+    section('Visa evidence', [visa, 'Green card: ' + j.gc_note]);
+    d.append(box);
+    return d;
+  }
+
   function drawTable() {
     const d = dash.data('jobs');
     const v = dash.data('jobs_view');
-    remoteBtn.setAttribute('aria-pressed', state.remoteOnly);
-    visaBtn.setAttribute('aria-pressed', state.visaOnly);
-    noBtn.setAttribute('aria-pressed', state.hideNo);
-    closedBtn.setAttribute('aria-pressed', state.showClosed);
+    const acts = dash.data('actions');
+    for (const [key, id] of Object.entries(btn)) document.getElementById(id).setAttribute('aria-pressed', state[key]);
     tbody.replaceChildren();
     if (d.status === 'error') {
       table.classList.remove('dash-skeleton');
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 8; td.className = 'jb-fail'; td.textContent = 'Failed to load';
+      const td = tbody.insertRow().insertCell(); td.colSpan = 7; td.className = 'jb-fail'; td.textContent = 'Failed to load';
       return;
     }
     if (d.status !== 'ok') { table.classList.add('dash-skeleton'); return; }
     table.classList.remove('dash-skeleton');
     const rows = d.data;
-    const salary = new Map((v.status === 'ok' ? v.data : []).map((r) => [r.id, r.salary]));
+    const view = new Map((v.status === 'ok' ? v.data : []).map((r) => [r.id, r]));
+    const actionsById = new Map((acts.status === 'ok' ? acts.data : []).map((a) => [a.id, a]));
     const latest = rows.map((j) => j.first_seen).sort().at(-1);
 
     const sectors = [...new Set(rows.map((j) => j.sector))].sort();
     sectorBox.replaceChildren(...sectors.map((s) => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'jb-chip'; b.textContent = s;
+      const b = el('button', 'jb-chip', s); b.type = 'button';
       b.setAttribute('aria-pressed', state.sector === s);
       b.addEventListener('click', () => { state.sector = state.sector === s ? null : s; drawTable(); });
       return b;
     }));
 
+    const val = (r) => state.sort === 'visa_rank' ? visaRank[r.visa] ?? -1
+      : state.sort === 'score' ? view.get(r.id)?.score ?? -1
+      : r[state.sort] ?? -1;
     const shown = rows.filter((j) =>
       (!state.remoteOnly || j.work_mode === 'Remote') &&
       (!state.visaOnly || ((j.visa === 'Sponsors' || j.visa === 'Has sponsored') && j.gc === 'Files green cards')) &&
       (!state.hideNo || j.visa !== 'No') &&
       (state.showClosed || j.status !== 'Likely closed') &&
       (!state.sector || j.sector === state.sector) &&
-      (!state.q || [j.org, j.title, j.fit_note, j.sector].join(' ').toLowerCase().includes(state.q))
+      (!state.q || [j.org, j.title, j.sector, ...(j.strengths || []), ...(j.gaps || [])].join(' ').toLowerCase().includes(state.q))
     ).sort((a, b) => {
-      const val = (r) => state.sort === 'visa_rank' ? visaRank[r.visa] ?? -1 : r[state.sort] ?? -1;
       const x = val(a), y = val(b);
       return (typeof x === 'number' ? x - y : String(x).localeCompare(String(y))) * state.dir;
     });
@@ -258,104 +327,113 @@
     });
 
     if (!shown.length) {
-      const tr = tbody.insertRow(); const td = tr.insertCell(); td.colSpan = 8; td.className = 'jb-empty';
-      td.textContent = 'No roles match these filters. Turn off Remote only or Proven sponsors only, or clear the search.';
+      const td = tbody.insertRow().insertCell(); td.colSpan = 7; td.className = 'jb-empty';
+      td.textContent = 'No roles match these filters. Turn a filter off or clear the search.';
       return;
     }
     for (const j of shown) {
       const tr = tbody.insertRow();
       tr.dataset.key = j.id;
       if (j.first_seen === latest) tr.classList.add('is-new');
+      const score = view.get(j.id)?.score;
 
-      const fit = tr.insertCell();
-      const fw = document.createElement('div'); fw.className = 'jb-fit';
-      const fn = document.createElement('span'); fn.textContent = j.fit;
-      const ft = document.createElement('div'); ft.className = 'jb-fit-track';
-      const ff = document.createElement('div'); ff.className = 'jb-fit-fill'; ff.style.width = j.fit + '%';
-      ft.append(ff); fw.append(fn, ft); fit.append(fw);
+      const fw = el('div', 'jb-fit');
+      const ft = el('div', 'jb-fit-track'); const ff = el('div', 'jb-fit-fill'); ff.style.width = (score ?? 0) + '%'; ft.append(ff);
+      fw.append(el('span', null, score ?? '—'), ft);
+      tr.insertCell().append(fw);
 
       const role = tr.insertCell(); role.className = 'jb-role';
-      const a = document.createElement('a'); a.href = j.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = j.title;
-      const org = document.createElement('div'); org.className = 'jb-org';
-      org.textContent = j.org + (j.posted ? ' · posted ' + d3.utcFormat('%b %-d')(new Date(j.posted)) : '');
-      const why = document.createElement('div'); why.className = 'jb-why'; why.textContent = j.fit_note;
-      role.append(a, org, why);
+      role.append(link(j.url, j.title),
+        el('div', 'jb-org', j.org + (j.posted ? ' · posted ' + d3.utcFormat('%b %-d')(new Date(j.posted)) : '')),
+        el('div', 'jb-why', j.sector),
+        detail(j, actionsById));
 
       const mode = tr.insertCell();
-      const mp = document.createElement('span'); mp.className = 'jb-pill mode'; mp.textContent = j.work_mode;
-      const loc = document.createElement('div'); loc.className = 'jb-why'; loc.textContent = j.location;
-      mode.append(mp, loc);
-
-      const visa = tr.insertCell();
-      const vp = document.createElement('span'); vp.className = 'jb-pill ' + (visaClass[j.visa] || 'mode'); vp.textContent = j.visa;
-      const vn = document.createElement('div'); vn.className = 'jb-why';
-      if (j.visa_url) {
-        const va = document.createElement('a'); va.href = j.visa_url; va.target = '_blank'; va.rel = 'noopener'; va.textContent = j.visa_note; va.style.color = 'inherit';
-        vn.append(va);
-      } else vn.textContent = j.visa_note;
-      visa.append(vp, vn);
-
+      mode.append(el('span', 'jb-pill mode', j.work_mode), el('div', 'jb-why', j.location));
+      tr.insertCell().append(el('span', 'jb-pill ' + (visaClass[j.visa] || 'mode'), j.visa));
       const gc = tr.insertCell(); gc.className = 'jb-hide-narrow';
-      const gp = document.createElement('span'); gp.className = 'jb-pill ' + (gcClass[j.gc] || 'mode'); gp.textContent = j.gc;
-      const gn = document.createElement('div'); gn.className = 'jb-why'; gn.textContent = j.gc_note;
-      gc.append(gp, gn);
-
-      const sal = tr.insertCell(); sal.className = 'jb-hide-narrow'; sal.textContent = salary.get(j.id) ?? '';
-      const sec = tr.insertCell(); sec.className = 'jb-hide-narrow'; sec.textContent = j.sector;
-      const st = tr.insertCell();
-      const sp = document.createElement('span'); sp.className = 'jb-pill ' + (statusClass[j.status] || 'mode'); sp.textContent = j.status;
-      st.append(sp);
+      gc.append(el('span', 'jb-pill ' + (gcClass[j.gc] || 'mode'), j.gc));
+      const sal = tr.insertCell(); sal.className = 'jb-hide-narrow'; sal.textContent = view.get(j.id)?.salary ?? '';
+      tr.insertCell().append(el('span', 'jb-pill ' + (statusClass[j.status] || 'mode'), j.status));
     }
+  }
+
+  function drawActions() {
+    const box = document.querySelector('.jb-actions');
+    const d = dash.data('top_actions');
+    if (d.status === 'error') return fail(box);
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); box.replaceChildren(); return; }
+    box.classList.remove('dash-skeleton');
+    box.replaceChildren(...d.data.slice(0, 6).map((a) => {
+      const c = el('div', 'jb-action');
+      const meta = el('div', 'jb-action-meta');
+      meta.append(el('span', 'jb-pill mode', a.kind), el('span', null, a.effort + ' · helps ' + a.roles + ' role' + (a.roles === 1 ? '' : 's')));
+      const title = el('strong', null, a.action);
+      c.append(meta, a.url ? (() => { const s = el('strong'); s.append(link(a.url, a.action)); return s; })() : title, el('span', 'jb-action-why', a.why));
+      return c;
+    }));
   }
 
   function drawSectors() {
     const box = document.querySelector('.jb-bars');
     const d = dash.data('by_sector');
-    box.replaceChildren();
-    if (d.status === 'error') { box.classList.remove('dash-skeleton'); box.innerHTML = '<div class="jb-fail">Failed to load</div>'; return; }
-    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); return; }
+    if (d.status === 'error') return fail(box);
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); box.replaceChildren(); return; }
     box.classList.remove('dash-skeleton');
     const max = d3.max(d.data, (r) => r.total) || 1;
-    for (const r of d.data) {
-      const row = document.createElement('div'); row.className = 'jb-bar';
-      const name = document.createElement('span'); name.textContent = r.sector;
-      const track = document.createElement('div'); track.className = 'jb-bar-track';
-      track.style.display = 'flex'; track.style.gap = '2px';
-      const rem = document.createElement('div'); rem.className = 'jb-bar-fill is-remote'; rem.style.width = (r.remote / max * 100) + '%';
-      const oth = document.createElement('div'); oth.className = 'jb-bar-fill'; oth.style.width = ((r.total - r.remote) / max * 100) + '%';
-      if (r.remote) track.append(rem);
-      if (r.total - r.remote) track.append(oth);
-      const n = document.createElement('span'); n.className = 'jb-bar-n'; n.textContent = r.total;
-      row.append(name, track, n);
-      box.append(row);
-    }
+    box.replaceChildren(...d.data.map((r) => {
+      const row = el('div', 'jb-bar');
+      const track = el('div', 'jb-bar-track');
+      if (r.remote) { const f = el('div', 'jb-bar-fill is-remote'); f.style.width = (r.remote / max * 100) + '%'; track.append(f); }
+      if (r.total - r.remote) { const f = el('div', 'jb-bar-fill'); f.style.width = ((r.total - r.remote) / max * 100) + '%'; track.append(f); }
+      row.append(el('span', null, r.sector), track, el('span', 'jb-bar-n', r.total));
+      return row;
+    }));
   }
 
   function drawWatch() {
-    const box = document.querySelector('.jb-watch');
+    const box = document.querySelector('.jb-list');
     const d = dash.data('watchlist');
-    box.replaceChildren();
-    if (d.status === 'error') { box.classList.remove('dash-skeleton'); box.innerHTML = '<div class="jb-fail">Failed to load</div>'; return; }
-    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); return; }
+    if (d.status === 'error') return fail(box);
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); box.replaceChildren(); return; }
     box.classList.remove('dash-skeleton');
-    for (const w of d.data) {
-      const item = document.createElement('div'); item.className = 'jb-watch-item';
-      const a = document.createElement('a'); a.href = w.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = w.org;
-      const s = document.createElement('span'); s.textContent = w.sector + ' · ' + w.signal;
-      item.append(a, s); box.append(item);
+    box.replaceChildren(...d.data.map((w) => {
+      const item = el('div', 'jb-list-item');
+      item.append(link(w.url, w.org), el('span', null, w.sector + ' · ' + w.signal));
+      return item;
+    }));
+  }
+
+  function drawSources() {
+    const box = document.querySelector('.jb-sources');
+    const d = dash.data('sources');
+    if (d.status === 'error') return fail(box);
+    if (d.status !== 'ok') { box.classList.add('dash-skeleton'); box.replaceChildren(); return; }
+    box.classList.remove('dash-skeleton');
+    const groups = { 'Job board': 'Job boards', 'List': 'Job boards', 'Newsletter': 'Newsletters and people', 'Person': 'Newsletters and people' };
+    const cols = new Map();
+    for (const s of d.data) {
+      const g = groups[s.kind] || s.kind;
+      if (!cols.has(g)) { const c = el('div', 'jb-list'); c.append(el('div', 'jb-group', g)); cols.set(g, c); }
+      const item = el('div', 'jb-list-item');
+      item.append(link(s.url, s.name), el('span', null, (s.kind === 'Person' || s.kind === 'Newsletter' ? s.kind + ' · ' : '') + s.what));
+      cols.get(g).append(item);
     }
+    box.replaceChildren(...cols.values());
   }
 
   dash.onData(() => {
-    document.querySelectorAll('[data-source="summary"]').forEach((el) => {
-      const d = dash.data('summary');
-      const row = d.status === 'ok' ? d.data[0] : null;
-      el.classList.toggle('dash-skeleton', !row && d.status !== 'error');
-      const val = row ? row[el.dataset.field] : null;
-      el.textContent = val == null || val === '' ? '—' : String(val);
+    const sum = dash.data('summary');
+    const row = sum.status === 'ok' ? sum.data[0] : null;
+    document.querySelectorAll('[data-source="summary"]').forEach((e) => {
+      e.classList.toggle('dash-skeleton', !row && sum.status !== 'error');
+      const v = row ? row[e.dataset.field] : null;
+      e.textContent = v == null || v === '' ? '—' : String(v);
     });
+    drawActions();
     drawTable();
     drawSectors();
     drawWatch();
+    drawSources();
   });
 </script>

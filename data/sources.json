@@ -1,0 +1,92 @@
+[
+ {
+  "kind": "Job board",
+  "name": "Tech Jobs for Good",
+  "what": "Tech roles at nonprofits, B-corps and foundations, with salary ranges and a remote filter.",
+  "url": "https://techjobsforgood.com/remote-jobs/"
+ },
+ {
+  "kind": "Job board",
+  "name": "Remote Impact",
+  "what": "Remote-only impact jobs; about 68 product manager listings as of mid-October.",
+  "url": "https://remoteimpact.org/remote-product-manager-jobs/"
+ },
+ {
+  "kind": "Job board",
+  "name": "On Purpose Careers",
+  "what": "Remote social-impact board with an AI & Tech for Good category, updated daily.",
+  "url": "https://www.onpurposecareers.org/jobboard"
+ },
+ {
+  "kind": "Job board",
+  "name": "All Tech Is Human: Responsible Tech Job Board",
+  "what": "Responsible AI, trust & safety and public interest tech roles, plus a bi-monthly careers newsletter.",
+  "url": "https://alltechishuman.org/responsible-tech-job-board"
+ },
+ {
+  "kind": "Job board",
+  "name": "Fast Forward job board",
+  "what": "Openings at tech nonprofits in the Fast Forward network.",
+  "url": "https://jobs.ffwd.org/jobs"
+ },
+ {
+  "kind": "Job board",
+  "name": "80,000 Hours job board",
+  "what": "High-impact roles, many in AI safety and governance.",
+  "url": "https://jobs.80000hours.org/"
+ },
+ {
+  "kind": "Job board",
+  "name": "Idealist",
+  "what": "The largest nonprofit job board; filter by remote and product.",
+  "url": "https://www.idealist.org/"
+ },
+ {
+  "kind": "Job board",
+  "name": "Civic Tech Field Guide jobs",
+  "what": "Civic and public interest tech openings worldwide.",
+  "url": "https://app.civictech.guide/jobs"
+ },
+ {
+  "kind": "Job board",
+  "name": "Devex and ReliefWeb",
+  "what": "International development and humanitarian roles, including digital and data positions.",
+  "url": "https://reliefweb.int/jobs"
+ },
+ {
+  "kind": "Job board",
+  "name": "Climatebase",
+  "what": "Climate tech roles at vetted employers.",
+  "url": "https://climatebase.org/"
+ },
+ {
+  "kind": "List",
+  "name": "Probably Good: impact-focused job boards",
+  "what": "Curated list of more impact job boards by cause area.",
+  "url": "https://probablygood.org/resources/job-boards/"
+ },
+ {
+  "kind": "Newsletter",
+  "name": "This Week in Public Sector Tech (#PublicSectorJobBoard)",
+  "what": "Weekly roundup of government and public interest tech jobs, often including senior PM roles.",
+  "url": "https://publicsectorjobboard.substack.com/"
+ },
+ {
+  "kind": "Person",
+  "name": "David Ryan Polgar",
+  "what": "Founder of All Tech Is Human; shares responsible tech job roundups on LinkedIn.",
+  "url": "https://alltechishuman.org/abouttheteam-david-ryan-polgar"
+ },
+ {
+  "kind": "Person",
+  "name": "Rebecca Heywood",
+  "what": "Writes the weekly #PublicSectorJobBoard roundup of public-sector tech jobs.",
+  "url": "https://publicsectorjobboard.substack.com/p/public-sector-job-board-feb-10-2026"
+ },
+ {
+  "kind": "Person",
+  "name": "Evan Hynes",
+  "what": "Co-founder of Climatebase; posts climate tech hiring news.",
+  "url": "https://crowdsourcingsustainability.buzzsprout.com/1248707/5401798"
+ }
+]

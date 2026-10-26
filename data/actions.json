@@ -1,0 +1,98 @@
+[
+ {
+  "id": "case-study",
+  "action": "Publish a one-page case study of the DISH multi-agent platform",
+  "kind": "Showcase",
+  "effort": "1 weekend",
+  "why": "Shows production AI with measured outcomes: 8 teams in 12 weeks, weeks of work cut to under an hour.",
+  "url": null
+ },
+ {
+  "id": "demo",
+  "action": "Build a small AI tool for a nonprofit or classroom and write up how you'd measure it",
+  "kind": "Showcase",
+  "effort": "1–2 weekends",
+  "why": "Mission orgs want to see AI applied to their users, not enterprise IT.",
+  "url": null
+ },
+ {
+  "id": "evals",
+  "action": "Write an AI evaluation plan for one target product: rubric, test set, safety checks",
+  "kind": "Showcase",
+  "effort": "1 weekend",
+  "why": "Responsible AI and evaluation roles hire for this skill directly.",
+  "url": null
+ },
+ {
+  "id": "aigp",
+  "action": "Earn the IAPP AI Governance Professional (AIGP) certification",
+  "kind": "Certification",
+  "effort": "4–6 weeks · $649–$799",
+  "why": "Recognized responsible AI credential for policy-facing and responsible AI roles.",
+  "url": "https://store.iapp.org/aigp-exam/"
+ },
+ {
+  "id": "aws-aip",
+  "action": "Earn AWS Certified AI Practitioner",
+  "kind": "Certification",
+  "effort": "2–3 weeks · $100",
+  "why": "Quick, recognizable AI credential that backs up the Bedrock work on your resume.",
+  "url": "https://aws.amazon.com/certification/certified-ai-practitioner/"
+ },
+ {
+  "id": "impact-resume",
+  "action": "Rewrite resume bullets around people served and public outcomes",
+  "kind": "Resume",
+  "effort": "1 evening",
+  "why": "Impact hiring managers look for mission outcomes (FDA approvals, 20+ CA agencies, GEET) before the tech stack.",
+  "url": null
+ },
+ {
+  "id": "edu-story",
+  "action": "Lead with GEET and your Georgetown education policy certificate",
+  "kind": "Resume",
+  "effort": "1 evening",
+  "why": "Your strongest signal for education roles; it's at the bottom of your resume today.",
+  "url": null
+ },
+ {
+  "id": "gov-portfolio",
+  "action": "Package FDA, CA OPR and DMHC delivery as a one-page civic tech portfolio",
+  "kind": "Showcase",
+  "effort": "1 weekend",
+  "why": "Government product delivery is rare and is your clearest edge for civic tech roles.",
+  "url": null
+ },
+ {
+  "id": "org-memo",
+  "action": "Send a one-page memo with one AI opportunity for the org's product",
+  "kind": "Showcase",
+  "effort": "1 evening per role",
+  "why": "Small nonprofits get few applicants who think in their domain; this stands out.",
+  "url": null
+ },
+ {
+  "id": "warm-intro",
+  "action": "Message a current PM or the hiring manager on LinkedIn before applying",
+  "kind": "Outreach",
+  "effort": "30 min per role",
+  "why": "Referrals move applications to the top at large AI labs and foundations.",
+  "url": null
+ },
+ {
+  "id": "visa-ask",
+  "action": "Ask the recruiter early: H-1B transfer and PERM with an approved I-140?",
+  "kind": "Outreach",
+  "effort": "5 min",
+  "why": "Saves weeks on roles that can't sponsor.",
+  "url": null
+ },
+ {
+  "id": "owasp",
+  "action": "Learn the OWASP Top 10 for LLM Applications (2025) and map it to one product",
+  "kind": "Learning",
+  "effort": "1 week",
+  "why": "Gives you a shared language for AI security product roles.",
+  "url": "https://www.hackerone.com/blog/owasp-top-10-llms-2025-how-genai-risks-are-evolving"
+ }
+]

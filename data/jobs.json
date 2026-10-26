@@ -11,14 +11,37 @@
   "posted": "2026-08-27",
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 84,
+  "fit": 75,
   "fit_note": "Exact mission match (AI for health, education, economic opportunity) and 0-to-1 AI product work; not remote.",
   "url": "https://job-boards.greenhouse.io/anthropic/jobs/5407337008",
   "visa": "Sponsors",
   "visa_note": "Postings say Anthropic sponsors visas and retains immigration counsel, though not for every role; 156 H-1B LCAs in 2025.",
   "visa_url": "https://www.ellis.com/visa-sponsors/anthropic-pbc",
   "gc": "No filings found",
-  "gc_note": "No green card (PERM) filings on public record, though it files many H-1Bs."
+  "gc_note": "No green card (PERM) filings on public record, though it files many H-1Bs.",
+  "fit_parts": {
+   "remote": 5,
+   "level": 25,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 74,
+  "strengths": [
+   "Shipped a multi-agent platform built with Claude Code and MCP",
+   "Runs AI adoption programs for many teams (FDX, GenAI Bootcamp)",
+   "Co-founded GEET, an education nonprofit"
+  ],
+  "gaps": [
+   "Asks for PM experience at a large tech company with a big user base"
+  ],
+  "prep": [
+   "case-study",
+   "demo",
+   "warm-intro",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": "Write a one-page 0-to-1 pitch: Claude for one underserved group, with a pilot plan."
  },
  {
   "id": "playlab-spm-responsible-ai",
@@ -32,14 +55,37 @@
   "posted": "2026-08-25",
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 93,
+  "fit": 100,
   "fit_note": "Remote, senior, AI-native nonprofit for educators; matches GEET and education policy background.",
   "url": "https://execsearches.com/nonprofit-jobs/senior-product-manager-responsible-ai-playlab-remote",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found and postings don't mention sponsorship. Ask the recruiter.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 80,
+  "strengths": [
+   "Trained 189+ consultants in AI (NorCal GenAI Bootcamp and FDE Wave 3)",
+   "Georgetown education policy certificate and GEET"
+  ],
+  "gaps": [
+   "No classroom or edtech product shipped",
+   "First PM at an early-stage startup"
+  ],
+  "prep": [
+   "demo",
+   "evals",
+   "edu-story",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": "Build a sample classroom app on Playlab's own platform and link it."
  },
  {
   "id": "recidiviz-director-product",
@@ -53,14 +99,35 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 86,
+  "fit": 77,
   "fit_note": "Remote, AI-assisted product workflows, government clients like your OPR and DMHC work; one level up from Senior PM.",
   "url": "https://job-boards.greenhouse.io/recidiviz/jobs/4672944006",
   "visa": "Unclear",
   "visa_note": "5 certified H-1B LCAs on record (2 in 2025), but a recent Recidiviz posting says sponsorship is not available.",
   "visa_url": "https://www.ellis.com/visa-sponsors/recidiviz-inc",
   "gc": "No filings found",
-  "gc_note": "No green card (PERM) filings on public record."
+  "gc_note": "No green card (PERM) filings on public record.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 20,
+   "ai": 12,
+   "sector": 15
+  },
+  "resume_match": 72,
+  "strengths": [
+   "Government product delivery",
+   "AI-assisted delivery workflows (AI SDLC)"
+  ],
+  "gaps": [
+   "Asks for 3+ years managing PMs or designers",
+   "Criminal justice domain is new to you"
+  ],
+  "prep": [
+   "gov-portfolio",
+   "org-memo",
+   "visa-ask"
+  ],
+  "prep_specific": "Show people leadership: your 5-person cross-functional team and FDX pod leads."
  },
  {
   "id": "cfc-spm-edtech-innovation",
@@ -74,14 +141,34 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 84,
+  "fit": 87,
   "fit_note": "Remote incl. California, senior, asks for AI in product development; new K-12 product line.",
   "url": "https://weworkremotely.com/remote-jobs/committee-for-children-senior-product-manager-edtech-innovation",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found for Committee for Children. Ask the recruiter.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 12,
+   "sector": 20
+  },
+  "resume_match": 72,
+  "strengths": [
+   "Uses AI in product development",
+   "Education policy credentials"
+  ],
+  "gaps": [
+   "No K-12 product-line experience"
+  ],
+  "prep": [
+   "demo",
+   "edu-story",
+   "visa-ask"
+  ],
+  "prep_specific": "Study their Second Step curriculum and propose one AI feature."
  },
  {
   "id": "givedirectly-sr-manager-product",
@@ -95,14 +182,33 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 78,
+  "fit": 75,
   "fit_note": "Remote senior product role in international development; East Africa hours overlap is the catch.",
   "url": "https://job-boards.greenhouse.io/givedirectly",
   "visa": "No",
   "visa_note": "GiveDirectly postings say it can't sponsor or transfer US or UK work visas.",
   "visa_url": "https://www.remoterocketship.com/ca/company/givedirectly/jobs/senior-manager-united-states-remote/",
   "gc": "No",
-  "gc_note": "Posting rules out sponsorship."
+  "gc_note": "Posting rules out sponsorship.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 0,
+   "sector": 20
+  },
+  "resume_match": 64,
+  "strengths": [
+   "Program design across many teams"
+  ],
+  "gaps": [
+   "No international development or mobile money product work",
+   "Must overlap with East Africa hours"
+  ],
+  "prep": [
+   "org-memo",
+   "impact-resume"
+  ],
+  "prep_specific": null
  },
  {
   "id": "codeai-pm-curriculum",
@@ -116,14 +222,34 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 76,
+  "fit": 87,
   "fit_note": "Remote, K-12 AI and CS education nonprofit; owns product vision and roadmap.",
   "url": "https://www.glassdoor.com/Job/remote-curriculum-and-professional-learning-product-manager-jobs-SRCH_IL.0,6_IS11047_KO7,59.htm",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 12,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 66,
+  "strengths": [
+   "Education policy credentials",
+   "AI product delivery"
+  ],
+  "gaps": [
+   "No K-12 curriculum or teacher training product experience"
+  ],
+  "prep": [
+   "edu-story",
+   "demo",
+   "visa-ask"
+  ],
+  "prep_specific": null
  },
  {
   "id": "nava-pm",
@@ -137,14 +263,31 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 74,
+  "fit": 57,
   "fit_note": "Remote public benefit corp doing government delivery, close to your consulting model; not AI-specific.",
   "url": "https://remotive.com/remote/jobs/product/product-manager-6108865",
   "visa": "No",
   "visa_note": "Nava's own postings require US work authorization without sponsorship, now or later.",
   "visa_url": "https://job-boards.greenhouse.io/navapbc/jobs/4362045009",
   "gc": "No",
-  "gc_note": "Posting rules out sponsorship."
+  "gc_note": "Posting rules out sponsorship.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 12,
+   "ai": 0,
+   "sector": 15
+  },
+  "resume_match": 76,
+  "strengths": [
+   "Government delivery with agile teams, like Nava's model"
+  ],
+  "gaps": [
+   "Visa: Nava doesn't sponsor"
+  ],
+  "prep": [
+   "gov-portfolio"
+  ],
+  "prep_specific": null
  },
  {
   "id": "rivet-spm",
@@ -158,14 +301,33 @@
   "posted": "2026-10-20",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 74,
+  "fit": 75,
   "fit_note": "Remote, senior, education equity; AI focus not stated.",
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 0,
+   "sector": 20
+  },
+  "resume_match": 62,
+  "strengths": [
+   "Education policy credentials"
+  ],
+  "gaps": [
+   "No curriculum or edtech domain experience"
+  ],
+  "prep": [
+   "edu-story",
+   "org-memo",
+   "visa-ask"
+  ],
+  "prep_specific": null
  },
  {
   "id": "ai-access-initiative-incubation",
@@ -179,14 +341,33 @@
   "posted": "2026-10-20",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 72,
+  "fit": 85,
   "fit_note": "Remote AI-for-good nonprofit; incubation work fits FDX program building, but the title isn't product management.",
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 10,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 74,
+  "strengths": [
+   "Built and scaled FDX and its community of practice from scratch"
+  ],
+  "gaps": [
+   "Incubation title, not product"
+  ],
+  "prep": [
+   "case-study",
+   "org-memo",
+   "visa-ask"
+  ],
+  "prep_specific": null
  },
  {
   "id": "code-for-america-lead-pm",
@@ -207,7 +388,24 @@
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 0,
+   "sector": 15
+  },
+  "resume_match": 70,
+  "strengths": [
+   "Government product delivery"
+  ],
+  "gaps": [
+   "Wants 7+ years on Medicaid or safety-net products"
+  ],
+  "prep": [
+   "gov-portfolio"
+  ],
+  "prep_specific": null
  },
  {
   "id": "propel-america-sr-dir-product",
@@ -221,14 +419,33 @@
   "posted": "2026-10-20",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 68,
+  "fit": 70,
   "fit_note": "Remote product leadership in workforce development; AI not central.",
   "url": "https://www.onpurposecareers.org/jobboard",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 20,
+   "ai": 0,
+   "sector": 20
+  },
+  "resume_match": 60,
+  "strengths": [
+   "Product and technology leadership"
+  ],
+  "gaps": [
+   "Director-level people leadership",
+   "Workforce development domain"
+  ],
+  "prep": [
+   "impact-resume",
+   "org-memo"
+  ],
+  "prep_specific": null
  },
  {
   "id": "earthjustice-enterprise-pm",
@@ -242,14 +459,34 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 66,
+  "fit": 77,
   "fit_note": "Owns an AI roadmap at a nonprofit and pays well; hybrid, not remote.",
   "url": "https://techjobsforgood.com/jobs/34551/",
   "visa": "Has sponsored",
   "visa_note": "5 H-1B filings and 1 green card filing since 2021; latest H-1B November 2025. Rare, so confirm for this role.",
   "visa_url": "https://visa-bulletin.us/employer/earthjustice/",
   "gc": "Files green cards",
-  "gc_note": "1 green card (PERM) filing since 2021."
+  "gc_note": "1 green card (PERM) filing since 2021.",
+  "fit_parts": {
+   "remote": 12,
+   "level": 25,
+   "ai": 25,
+   "sector": 15
+  },
+  "resume_match": 78,
+  "strengths": [
+   "Enterprise document automation with SharePoint and Microsoft Syntex",
+   "Owns AI roadmaps"
+  ],
+  "gaps": [
+   "Legal nonprofit domain is new"
+  ],
+  "prep": [
+   "case-study",
+   "evals",
+   "visa-ask"
+  ],
+  "prep_specific": "Lead with the 34TB loan-document platform: 17K+ docs a day."
  },
  {
   "id": "openai-academy-partnerships",
@@ -263,14 +500,32 @@
   "posted": "2026-10-22",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 62,
+  "fit": 67,
   "fit_note": "OpenAI Academy runs AI education programs; this is a partnerships role, not product, and it's hybrid.",
   "url": "https://startup.jobs/company/openai",
   "visa": "Sponsors",
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
   "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
   "gc": "Files green cards",
-  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026."
+  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026.",
+  "fit_parts": {
+   "remote": 12,
+   "level": 10,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 58,
+  "strengths": [
+   "Runs AI education programs (bootcamps, enablement waves)"
+  ],
+  "gaps": [
+   "Partnerships role in global affairs, not product"
+  ],
+  "prep": [
+   "impact-resume",
+   "warm-intro"
+  ],
+  "prep_specific": null
  },
  {
   "id": "cdp-pm",
@@ -284,14 +539,31 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 58,
+  "fit": 69,
   "fit_note": "Remote and AI-prototyping heavy, but below your level.",
   "url": "https://techjobsforgood.com/jobs/36266/",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 12,
+   "ai": 12,
+   "sector": 15
+  },
+  "resume_match": 70,
+  "strengths": [
+   "AI prototyping"
+  ],
+  "gaps": [
+   "Below your level and pay"
+  ],
+  "prep": [
+   "demo"
+  ],
+  "prep_specific": null
  },
  {
   "id": "great-minds-spm-math",
@@ -305,14 +577,32 @@
   "posted": null,
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 56,
+  "fit": 75,
   "fit_note": "Remote, senior title, curriculum product; not AI and pays low for the level.",
   "url": "https://techjobsforgood.com/jobs/35791/",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 0,
+   "sector": 20
+  },
+  "resume_match": 52,
+  "strengths": [
+   "Product delivery"
+  ],
+  "gaps": [
+   "Math curriculum domain",
+   "No AI in the role"
+  ],
+  "prep": [
+   "edu-story"
+  ],
+  "prep_specific": null
  },
  {
   "id": "willow-pm",
@@ -326,14 +616,31 @@
   "posted": "2026-09-27",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 54,
+  "fit": 74,
   "fit_note": "Remote, mission-driven PBC that requires building with AI; mid-level title.",
   "url": "https://www.edtech.com/jobs/product-manager-80212",
   "visa": "Unknown",
   "visa_note": "No H-1B filings found.",
   "visa_url": null,
   "gc": "Unknown",
-  "gc_note": "No public record found either way."
+  "gc_note": "No public record found either way.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 12,
+   "ai": 12,
+   "sector": 20
+  },
+  "resume_match": 60,
+  "strengths": [
+   "Builds with AI tools daily"
+  ],
+  "gaps": [
+   "Mid-level title"
+  ],
+  "prep": [
+   "demo"
+  ],
+  "prep_specific": null
  },
  {
   "id": "wikimedia-lead-pm-security",
@@ -347,14 +654,35 @@
   "posted": "2026-09-23",
   "first_seen": "2026-10-26",
   "status": "Likely open",
-  "fit": 80,
+  "fit": 82,
   "fit_note": "Remote, lead level, Wikipedia's security strategy for the AI era; security is a new domain for you. Open to candidates in Asia too.",
   "url": "https://wikimediafoundation.org/jobs/",
   "visa": "Has sponsored",
   "visa_note": "1–2 H-1B LCAs a year recently, with approved petitions in FY2026. Remote hiring outside the US may avoid the need for a visa.",
   "visa_url": "https://www.ellis.com/visa-sponsors/wikimedia-foundation-inc",
   "gc": "Files green cards",
-  "gc_note": "1 green card petition in FY2026."
+  "gc_note": "1 green card petition in FY2026.",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 12,
+   "sector": 15
+  },
+  "resume_match": 58,
+  "strengths": [
+   "Lead-level product ownership",
+   "Delivery governance (CI/CD, secure release at Roche)"
+  ],
+  "gaps": [
+   "Security product domain is new"
+  ],
+  "prep": [
+   "owasp",
+   "evals",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": "Read Wikimedia's 2025–26 product OKRs on Meta-Wiki and reference one."
  },
  {
   "id": "openai-pm-ai-native-philanthropy",
@@ -375,7 +703,29 @@
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
   "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
   "gc": "Files green cards",
-  "gc_note": "OpenAI has green card (PERM) filings in both FY2025 and FY2026; confirm the Foundation entity does too."
+  "gc_note": "OpenAI has green card (PERM) filings in both FY2025 and FY2026; confirm the Foundation entity does too.",
+  "fit_parts": {
+   "remote": 12,
+   "level": 25,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 76,
+  "strengths": [
+   "Runs AI adoption programs for many teams",
+   "Co-founded GEET, a nonprofit"
+  ],
+  "gaps": [
+   "No grantmaking or philanthropy product experience"
+  ],
+  "prep": [
+   "case-study",
+   "demo",
+   "impact-resume",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": null
  },
  {
   "id": "openai-pm-learning",
@@ -389,14 +739,34 @@
   "posted": "2026-08-26",
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 79,
+  "fit": 82,
   "fit_note": "Shapes learning in ChatGPT for hundreds of millions of people; asks for 10+ years in product. Hybrid in SF.",
   "url": "https://jobs.omegavp.com/companies/openai/jobs/91177329-product-manager-learning",
   "visa": "Sponsors",
   "visa_note": "OpenAI files 200+ H-1B LCAs a year (210 certified in FY2026 through June).",
   "visa_url": "https://www.visaverge.com/h1b-sponsors/openai-opco/",
   "gc": "Files green cards",
-  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026."
+  "gc_note": "Green card (PERM) filings in both FY2025 and FY2026.",
+  "fit_parts": {
+   "remote": 12,
+   "level": 25,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 70,
+  "strengths": [
+   "Teaching AI at scale (89-person bootcamp, 100-consultant wave)",
+   "Education policy credentials"
+  ],
+  "gaps": [
+   "Asks for 10+ years in product with consumer scale"
+  ],
+  "prep": [
+   "demo",
+   "edu-story",
+   "visa-ask"
+  ],
+  "prep_specific": null
  },
  {
   "id": "czi-pm-evaluation",
@@ -410,13 +780,309 @@
   "posted": "2026-02-27",
   "first_seen": "2026-10-26",
   "status": "Verify",
-  "fit": 75,
+  "fit": 82,
   "fit_note": "AI evaluation for classroom AI tools, 20 minutes from Sunnyvale; posted in February, so it may be filled.",
   "url": "https://job-boards.greenhouse.io/education/jobs/7435343",
   "visa": "Has sponsored",
   "visa_note": "CZI LLC and CZI Foundation filed about 7 H-1B LCAs in 2025, mostly for engineering roles.",
   "visa_url": "https://www.ellis.com/visa-sponsors/chan-zuckerberg-initiative-llc",
   "gc": "No filings found",
-  "gc_note": "No green card (PERM) filings found for either CZI entity."
+  "gc_note": "No green card (PERM) filings found for either CZI entity.",
+  "fit_parts": {
+   "remote": 12,
+   "level": 25,
+   "ai": 25,
+   "sector": 20
+  },
+  "resume_match": 64,
+  "strengths": [
+   "AI SDLC with structured acceptance criteria"
+  ],
+  "gaps": [
+   "Asks for model evaluation or AI/ML PM experience"
+  ],
+  "prep": [
+   "evals",
+   "aws-aip",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "anthropic-pm-public-sector",
+  "org": "Anthropic",
+  "title": "Product Manager, Public Sector",
+  "sector": "Civic tech",
+  "work_mode": "Hybrid",
+  "location": "Washington, DC (some listings say remote)",
+  "salary_min": 305000,
+  "salary_max": 385000,
+  "posted": "2026-08-20",
+  "status": "Verify",
+  "url": "https://www.anthropic.com/careers/jobs/4992055008",
+  "visa": "Sponsors",
+  "visa_note": "Postings say Anthropic sponsors visas and retains immigration counsel; 156 H-1B LCAs in 2025.",
+  "visa_url": "https://www.ellis.com/visa-sponsors/anthropic-pbc",
+  "gc": "No filings found",
+  "gc_note": "No green card (PERM) filings on public record, though it files many H-1Bs.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 12,
+   "level": 25,
+   "ai": 25,
+   "sector": 15
+  },
+  "fit": 77,
+  "resume_match": 82,
+  "strengths": [
+   "Public-sector product delivery at FDA, CA OPR and DMHC",
+   "Claude Code and MCP delivery at DISH"
+  ],
+  "gaps": [
+   "Some portfolios need security clearance eligibility",
+   "DC-based"
+  ],
+  "prep": [
+   "gov-portfolio",
+   "case-study",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": "Brush up on FedRAMP and state AI procurement basics."
+ },
+ {
+  "id": "zillow-spm-social-impact",
+  "org": "Zillow",
+  "title": "Senior Product Manager, Social Impact",
+  "sector": "Tech for good",
+  "work_mode": "Remote",
+  "location": "United States",
+  "salary_min": 148600,
+  "salary_max": 237400,
+  "posted": "2026-06-30",
+  "status": "Verify",
+  "url": "https://dailyremote.com/remote-job/senior-product-manager-social-impact-5165397",
+  "visa": "Sponsors",
+  "visa_note": "144 H-1B LCAs in 2025, including product managers.",
+  "visa_url": "https://www.ellis.com/visa-sponsors/zillow-inc",
+  "gc": "Files green cards",
+  "gc_note": "22 PERM filings in 2024 and 74 in 2023, but none on record for 2025. Ask whether PERM is active.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 30,
+   "level": 25,
+   "ai": 12,
+   "sector": 15
+  },
+  "fit": 82,
+  "resume_match": 72,
+  "strengths": [
+   "AI-driven product delivery",
+   "Government program experience"
+  ],
+  "gaps": [
+   "Housing policy domain is new"
+  ],
+  "prep": [
+   "org-memo",
+   "visa-ask"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "codepath-sr-mgr-ai-practice",
+  "org": "CodePath (Claude Corps)",
+  "title": "Senior Manager of AI Practice, Claude Corps",
+  "sector": "Education",
+  "work_mode": "Remote",
+  "location": "United States",
+  "salary_min": 130000,
+  "salary_max": 148000,
+  "posted": "2026-08-11",
+  "status": "Verify",
+  "url": "https://job-boards.greenhouse.io/codepath/jobs/5204061007",
+  "visa": "Unclear",
+  "visa_note": "One tracker says CodePath sponsors, but no H-1B petition history was found.",
+  "visa_url": "https://scoutify.com/companies/codepath/",
+  "gc": "Unknown",
+  "gc_note": "No public record found either way.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 30,
+   "level": 10,
+   "ai": 25,
+   "sector": 20
+  },
+  "fit": 85,
+  "resume_match": 82,
+  "strengths": [
+   "Led AI coaching at scale (FDE Wave 3, GenAI Bootcamp)",
+   "Hands-on with Claude Code"
+  ],
+  "gaps": [
+   "Asks for engineering management background"
+  ],
+  "prep": [
+   "case-study",
+   "warm-intro",
+   "visa-ask"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "google-org-pm2-ai-social-good",
+  "org": "Google.org",
+  "title": "Program Manager II, AI for Social Good",
+  "sector": "AI lab / foundation",
+  "work_mode": "Hybrid",
+  "location": "San Francisco, Atlanta and other US cities",
+  "salary_min": 132000,
+  "salary_max": 190000,
+  "posted": "2026-06-05",
+  "status": "Verify",
+  "url": "https://jobs.asugsvsummit.com/companies/google-24698/jobs/81691396-program-manager-ii-ai-for-social-good-google-org",
+  "visa": "Sponsors",
+  "visa_note": "Google files 7,000–9,000 H-1B LCAs a year.",
+  "visa_url": "https://www.ellis.com/visa-sponsors/google-llc",
+  "gc": "No filings found",
+  "gc_note": "Google filed almost no PERM applications in 2025–26. Ask whether green card sponsorship has resumed.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 12,
+   "level": 10,
+   "ai": 25,
+   "sector": 20
+  },
+  "fit": 67,
+  "resume_match": 80,
+  "strengths": [
+   "AI enablement programs and measurable ROI on AI use cases",
+   "Nonprofit experience (GEET)"
+  ],
+  "gaps": [
+   "Grant portfolio management at Google scale"
+  ],
+  "prep": [
+   "impact-resume",
+   "warm-intro",
+   "aigp",
+   "visa-ask"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "coleridge-pm-lead",
+  "org": "Coleridge Initiative",
+  "title": "Project Management Lead",
+  "sector": "Civic tech",
+  "work_mode": "Remote",
+  "location": "United States",
+  "salary_min": 100000,
+  "salary_max": 115000,
+  "posted": "2026-10-20",
+  "status": "Likely open",
+  "url": "https://www.onpurposecareers.org/jobboard",
+  "visa": "Has sponsored",
+  "visa_note": "5 H-1B LCAs on record.",
+  "visa_url": "https://www.ellis.com/visa-sponsors/coleridge-initiative-inc",
+  "gc": "Unknown",
+  "gc_note": "No public record found either way.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 30,
+   "level": 10,
+   "ai": 0,
+   "sector": 15
+  },
+  "fit": 55,
+  "resume_match": 66,
+  "strengths": [
+   "Delivery leadership with RAID and governance"
+  ],
+  "gaps": [
+   "Government data infrastructure domain"
+  ],
+  "prep": [
+   "gov-portfolio"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "nyc-pit-crew-spm",
+  "org": "NYC Office of Technology and Innovation (PIT Crew)",
+  "title": "Senior Product Manager",
+  "sector": "Civic tech",
+  "work_mode": "On-site",
+  "location": "New York City",
+  "salary_min": null,
+  "salary_max": null,
+  "posted": "2026-07-22",
+  "status": "Verify",
+  "url": "https://jobs.technyc.org/companies/pit-crew-2/jobs/87191460-senior-product-manager",
+  "visa": "Unknown",
+  "visa_note": "City government roles rarely sponsor. Ask HR.",
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "No public record found either way.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 5,
+   "level": 25,
+   "ai": 0,
+   "sector": 15
+  },
+  "fit": 45,
+  "resume_match": 76,
+  "strengths": [
+   "End-to-end public-sector product delivery"
+  ],
+  "gaps": [
+   "On-site in NYC",
+   "City roles rarely sponsor visas"
+  ],
+  "prep": [
+   "gov-portfolio",
+   "warm-intro"
+  ],
+  "prep_specific": null
+ },
+ {
+  "id": "duolingo-spm-learning",
+  "org": "Duolingo",
+  "title": "Senior Product Manager, Learning",
+  "sector": "Education",
+  "work_mode": "On-site",
+  "location": "New York or Pittsburgh",
+  "salary_min": 183000,
+  "salary_max": 247000,
+  "posted": "2026-09-23",
+  "status": "Likely open",
+  "url": "https://www.edtech.com/jobs/senior-product-manager-learning-56591",
+  "visa": "Unknown",
+  "visa_note": "Application asks whether you need sponsorship; filings not checked yet.",
+  "visa_url": null,
+  "gc": "Unknown",
+  "gc_note": "Not checked yet.",
+  "first_seen": "2026-10-26",
+  "fit_parts": {
+   "remote": 5,
+   "level": 25,
+   "ai": 12,
+   "sector": 20
+  },
+  "fit": 62,
+  "resume_match": 58,
+  "strengths": [
+   "Product delivery"
+  ],
+  "gaps": [
+   "Consumer learning at Duolingo's scale"
+  ],
+  "prep": [
+   "edu-story",
+   "demo"
+  ],
+  "prep_specific": null
  }
 ]

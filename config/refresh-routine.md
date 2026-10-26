@@ -15,10 +15,11 @@ in education policy.
 
 ## What counts as a match
 
-- **Titles:** Senior Product Manager, AI Product Manager, Lead/Principal PM,
-  Product Lead, Director of Product, AI Solution Owner, Forward Deployed PM.
-  Include close variants such as incubation, AI programs, or AI adoption lead
-  when they involve product ownership.
+- **Titles:** any product or program management role: Product Manager at any
+  level, Senior/Lead/Principal/Staff PM, AI PM, Product Owner, Product Lead,
+  Director/Head of Product, Technical Program Manager, Program Manager on AI
+  or tech programs, AI Solution Owner, Forward Deployed PM, AI practice or
+  incubation leads with product ownership.
 - **Sectors** (use these exact labels): `AI lab / foundation`, `Tech for good`,
   `Education`, `International development`, `Civic tech`.
 - **Work mode:** `Remote` (preferred), `Hybrid`, or `On-site`.
@@ -60,11 +61,27 @@ since they may not need a visa.
 | Part | Points |
 |---|---|
 | Remote: Remote 30, Hybrid 12, On-site 5 | 30 |
-| Level: Senior/Lead/Principal PM or AI PM 25, Director 20, PM 12, adjacent non-PM 10 | 25 |
+| Level, judged by requirements and pay, not just title: senior-level PM 25, Director 20, mid-level PM 12, adjacent program or practice role 10 | 25 |
 | AI at the core of the role 25; AI as a tool 12; none 0 | 25 |
 | Sector match: AI-for-good, education or international development 20; other civic or tech for good 15 | 20 |
 
-`fit_note` is one sentence on why the role fits, plus the main catch.
+Store the parts as `fit_parts` ({remote, level, ai, sector}) and their sum as `fit`.
+
+## Resume match (0–100)
+
+How well the AIPM resume (summarized above) covers the role's stated
+requirements: seniority, AI product delivery, domain, people management and
+any hard requirements. Write `strengths` (1–3 short phrases citing real
+resume facts) and `gaps` (1–2 phrases). The dashboard shows the average of
+`fit` and `resume_match` as the overall match.
+
+## Prep
+
+`prep` is a list of action ids from `data/actions.json` (the dashboard's
+`actions` dataset). Pick 2–4 that close this role's gaps, and always include
+`visa-ask` unless the visa is `No`. `prep_specific` is one optional
+role-specific step, or null. Add a new action to the actions dataset only
+when no existing one fits.
 
 ## Row shape (`data/jobs.json`)
 
@@ -72,6 +89,8 @@ since they may not need a visa.
 {"id":"org-short-title","org":"","title":"","sector":"","work_mode":"Remote","location":"",
  "salary_min":null,"salary_max":null,"posted":"YYYY-MM-DD or null","first_seen":"YYYY-MM-DD",
  "status":"Likely open | Verify | Likely closed","fit":0,"fit_note":"","url":"",
+ "fit_parts":{"remote":0,"level":0,"ai":0,"sector":0},"resume_match":0,"strengths":[],"gaps":[],
+ "prep":["visa-ask"],"prep_specific":null,
  "visa":"Sponsors | Has sponsored | Unclear | Unknown | No","visa_note":"","visa_url":null,
  "gc":"Files green cards | No filings found | Unknown | No","gc_note":""}
 ```
@@ -80,3 +99,9 @@ since they may not need a visa.
 Use `Verify` when the date is unknown or the posting comes only from an
 aggregator. Use `Likely closed` when the deadline has passed or the posting is
 marked expired.
+
+## Where to search
+
+The boards, newsletters and people in `data/sources.json`, plus employer
+careers pages. LinkedIn needs a login, so the refresh reaches LinkedIn only
+through public posts and job pages that web search returns.
